@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudo & Simulado — Microbiologia Geral (2º Período)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #edf3f7;
+      --bg-surface: #fcfaf4;
+      --bg-card: #ffffff;
+      --bg-subtle: #f2efe6;
+      --text-main: #1d2d50;
+      --text-muted: #52627a;
+      --border: #d9e2ec;
+      --navy: #1f335c;
+      --navy-soft: #e6eef8;
+      --sage: #3b7a57;
+      --sage-bg: #e4f2ea;
+      --sage-border: #9fd1b5;
+      --terra: #c65d28;
+      --terra-bg: #fdf0e8;
+      --terra-border: #f0b899;
+      --amber: #b4690e;
+      --amber-bg: #fef7e6;
+      --amber-border: #f5d38e;
+      --purple: #6b3fa0;
+      --purple-bg: #f3ecfa;
+      --purple-border: #cfb7eb;
+      --teal: #0f766e;
+      --teal-bg: #e6f6f4;
+      --teal-border: #99dad3;
+      --danger: #b91c1c;
+      --danger-bg: #feecec;
+      --danger-border: #f4a9a9;
+      --shadow-sm: 0 2px 8px rgba(29, 45, 80, 0.06);
+      --shadow-md: 0 10px 28px rgba(29, 45, 80, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+    }
+
+    body.dark {
+      --bg-page: #0f172a;
+      --bg-surface: #162033;
+      --bg-card: #1e293b;
+      --bg-subtle: #243247;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --navy: #93c5fd;
+      --navy-soft: #1e3a5f;
+      --sage: #6ee7b7;
+      --sage-bg: #12332a;
+      --sage-border: #25644e;
+      --terra: #fdba74;
+      --terra-bg: #3b2318;
+      --terra-border: #7c4427;
+      --amber: #fcd34d;
+      --amber-bg: #3a2d13;
+      --amber-border: #785d22;
+      --purple: #d8b4fe;
+      --purple-bg: #2e1d44;
+      --purple-border: #5f3d8a;
+      --teal: #5eead4;
+      --teal-bg: #113433;
+      --teal-border: #1e605d;
+      --danger: #fca5a5;
+      --danger-bg: #3f181c;
+      --danger-border: #822b33;
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .hero {
+      background: linear-gradient(135deg, #14532d 0%, #115e59 52%, #1e3a5f 100%);
+      color: #ffffff;
+      padding: 28px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 85% 20%, rgba(255,255,255,0.12), transparent 45%),
+                  radial-gradient(circle at 12% 90%, rgba(134,239,172,0.18), transparent 40%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .hero-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.26); }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .hero p { margin: 0; opacity: 0.92; font-size: 0.98rem; max-width: 780px; }
+
+    /* Progress Bar inside Hero */
+    .study-progress-wrap {
+      margin-top: 18px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .progress-info { font-size: 0.86rem; font-weight: 600; }
+    .progress-bar-bg {
+      flex: 1;
+      min-width: 180px;
+      height: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #86efac, #fde047);
+      border-radius: 999px;
+      transition: width 0.35s ease;
+    }
+
+    /* Sticky Main Tabs */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 15px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .tab-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
+    .tab-btn.active { background: var(--navy-soft); color: var(--navy); border-color: var(--border); }
+    .tab-btn.quiz-tab.active { background: var(--terra-bg); color: var(--terra); border-color: var(--terra-border); }
+    .tab-btn.turbo-tab.active { background: var(--purple-bg); color: var(--purple); border-color: var(--purple-border); }
+    .done-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: none; }
+    .tab-btn.is-done .done-dot { display: inline-block; }
+
+    /* Container */
+    .container { max-width: 1120px; margin: 24px auto 64px; padding: 0 16px; }
+
+    /* Search box */
+    .search-bar-wrap { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+    .search-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--navy); }
+    .search-status { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+
+    /* Sections */
+    .panel { display: none; animation: fadeIn 0.25s ease; }
+    .panel.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Module Header Card */
+    .module-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .module-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      background: var(--navy-soft);
+      color: var(--navy);
+    }
+    .module-banner h2 { margin: 0 0 6px; font-size: 1.55rem; font-weight: 800; line-height: 1.25; }
+    .module-banner p { margin: 0; color: var(--text-muted); max-width: 720px; font-size: 0.95rem; }
+    .check-done-btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.86rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .check-done-btn.checked { background: var(--sage-bg); color: var(--sage); border-color: var(--sage-border); }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h4 { margin: 16px 0 8px; font-size: 1.02rem; font-weight: 700; color: var(--text-main); }
+    .card p { margin: 0 0 10px; }
+    .card ul, .card ol { margin: 8px 0 12px; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+    code {
+      background: var(--bg-subtle);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.88em;
+      font-weight: 700;
+    }
+
+    /* Grid layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 14px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 14px; margin: 14px 0; }
+    .mini-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .mini-box h4 { margin: 0 0 6px; font-size: 0.98rem; color: var(--navy); }
+    .mini-box p, .mini-box li { font-size: 0.92rem; }
+
+    /* Callouts */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 15px 18px;
+      margin: 14px 0;
+      border-left: 4px solid;
+      font-size: 0.94rem;
+    }
+    .callout-title { font-weight: 800; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+    .callout.tip { background: var(--sage-bg); border-color: var(--sage); }
+    .callout.tip .callout-title { color: var(--sage); }
+    .callout.trap { background: var(--terra-bg); border-color: var(--terra); }
+    .callout.trap .callout-title { color: var(--terra); }
+    .callout.analogy { background: var(--amber-bg); border-color: var(--amber); }
+    .callout.analogy .callout-title { color: var(--amber); }
+    .callout.clinical { background: var(--teal-bg); border-color: var(--teal); }
+    .callout.clinical .callout-title { color: var(--teal); }
+    .callout.formula { background: var(--purple-bg); border-color: var(--purple); }
+    .callout.formula .callout-title { color: var(--purple); }
+
+    /* Flow pills */
+    .flow-chain {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+      padding: 14px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border);
+    }
+    .flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .flow-arrow { color: var(--terra); font-weight: 800; font-size: 1rem; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--radius-md); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--bg-card); }
+    th {
+      background: var(--navy-soft);
+      color: var(--navy);
+      text-align: left;
+      padding: 11px 14px;
+      font-weight: 800;
+      border-bottom: 1.5px solid var(--border);
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    /* SVG Diagram box */
+    .diagram-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin: 16px 0;
+      text-align: center;
+    }
+    .diagram-box svg { max-width: 100%; height: auto; }
+    .diagram-caption { font-size: 0.82rem; color: var(--text-muted); margin-top: 8px; font-weight: 600; }
+
+    /* Flashcards / Turbo Review */
+    .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+    .flashcard {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      min-height: 155px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flashcard:hover { transform: translateY(-2px); border-color: var(--purple); box-shadow: var(--shadow-sm); }
+    .flashcard-mod { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
+    .flashcard-q { font-weight: 700; font-size: 0.96rem; margin-bottom: 10px; }
+    .flashcard-a {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.9rem;
+      color: var(--sage);
+      font-weight: 600;
+    }
+    .flashcard.revealed { border-color: var(--sage-border); background: var(--sage-bg); }
+    .flashcard.revealed .flashcard-a { display: block; }
+    .flashcard-hint { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+    .flashcard.revealed .flashcard-hint { display: none; }
+
+    /* Quiz Section */
+    .quiz-dashboard {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .quiz-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .stat-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--navy); line-height: 1.1; }
+    .stat-lbl { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-top: 4px; }
+    .quiz-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .pill.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    body.dark .pill.active { color: #0f172a; }
+    .action-btn {
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.18s;
+    }
+    .action-btn:hover { background: var(--bg-subtle); }
+    .action-btn.primary { background: var(--terra); color: #fff; border-color: var(--terra); }
+    .action-btn.primary:hover { opacity: 0.92; }
+
+    /* Question Cards */
+    .q-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .q-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .q-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--navy-soft);
+      color: var(--navy);
+    }
+    .q-diff { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
+    .q-stem { font-size: 1rem; font-weight: 700; margin: 0 0 14px; line-height: 1.55; }
+    .options-list { display: flex; flex-direction: column; gap: 9px; }
+    .opt-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.93rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      transition: all 0.18s ease;
+      line-height: 1.45;
+    }
+    .opt-btn:hover:not(:disabled) { border-color: var(--navy); background: var(--navy-soft); transform: translateY(-1px); }
+    .opt-btn:disabled { cursor: default; }
+    .opt-letter {
+      flex: 0 0 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--navy);
+      margin-top: 1px;
+    }
+    .opt-btn.correct { background: var(--sage-bg); border-color: var(--sage); font-weight: 600; }
+    .opt-btn.correct .opt-letter { background: var(--sage); color: #fff; border-color: var(--sage); }
+    .opt-btn.wrong { background: var(--danger-bg); border-color: var(--danger); }
+    .opt-btn.wrong .opt-letter { background: var(--danger); color: #fff; border-color: var(--danger); }
+    .q-explain {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      border-left: 4px solid var(--sage);
+      font-size: 0.9rem;
+    }
+    .q-explain.show { display: block; animation: fadeIn 0.25s ease; }
+    .q-explain.wrong-feedback { border-left-color: var(--danger); }
+    .q-explain strong.status-ok { color: var(--sage); }
+    .q-explain strong.status-err { color: var(--danger); }
+
+    .module-nav-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+    mark.hl { background: #fde047; color: #1e293b; padding: 0 3px; border-radius: 4px; }
+
+    @media print {
+      .nav-sticky, .hero-actions, .search-bar-wrap, .check-done-btn, .module-nav-footer { display: none !important; }
+      .panel { display: block !important; page-break-after: always; }
+      body { background: #fff; color: #000; }
+      .card, .module-banner, .q-card { box-shadow: none; break-inside: avoid; }
+    }
+  
+    /* Wrapped sticky tabs so Simulado is always visible without scrolling */
+    .nav-inner { flex-wrap: wrap !important; overflow-x: visible !important; }
+    .btn-simulado-hero {
+      background: #e76f3c;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-simulado-hero:hover { background: #d45d2a; transform: translateY(-1px); }
+
+    /* Turbo Multiple-Choice Cards */
+    .turbo-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .turbo-opts { display: flex; flex-direction: column; gap: 7px; }
+    .turbo-opt-btn {
+      width: 100%;
+      text-align: left;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      transition: all 0.16s ease;
+      line-height: 1.4;
+    }
+    .turbo-opt-btn:hover:not(:disabled) { border-color: var(--purple); background: var(--purple-bg); }
+    .turbo-opt-btn:disabled { cursor: default; }
+    .turbo-opt-btn.correct { background: var(--sage-bg); border-color: var(--sage); font-weight: 600; }
+    .turbo-opt-btn.wrong { background: var(--danger-bg); border-color: var(--danger); }
+    .turbo-letter {
+      flex: 0 0 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.76rem;
+      color: var(--purple);
+      margin-top: 1px;
+    }
+    .turbo-opt-btn.correct .turbo-letter { background: var(--sage); color: #fff; border-color: var(--sage); }
+    .turbo-opt-btn.wrong .turbo-letter { background: var(--danger); color: #fff; border-color: var(--danger); }
+    .turbo-explain {
+      display: none;
+      margin-top: 4px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--bg-subtle);
+      border-left: 3.5px solid var(--sage);
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+    .turbo-explain.show { display: block; animation: fadeIn 0.2s ease; }
+    .turbo-explain.is-wrong { border-left-color: var(--danger); }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <span class="badge-pill">🦠 Microbiologia Geral • 2º Período (Prof.ª Alana Araújo Braga)</span>
+        <div class="hero-actions">
+          <button class="btn-ghost" id="toggleDarkBtn" type="button">🌙 Modo Escuro</button>
+          <button class="btn-ghost" onclick="window.print()" type="button">🖨️ Imprimir / PDF</button>
+        </div>
+      </div>
+      <h1>Guia Completo de Estudo & Simulado — Microbiologia</h1>
+      <p>Resumos fáceis de entender, diagramas visuais, tabelas comparativas, alertas de pegadinhas, 16 questões rápidas de pegadinhas (múltipla escolha) e <strong>28 questões de múltipla escolha comentadas</strong> com base em todas as 4 aulas da pasta de Microbiologia.</p>
+
+      <div class="study-progress-wrap">
+        <div class="progress-info" id="progressText">Progresso de estudo: 0 de 4 módulos concluídos</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-info" id="quizMiniScore">Simulado: 0/28 respondidas</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY TABS -->
+  <nav class="nav-sticky" aria-label="Navegação por módulos">
+    <div class="nav-inner">
+      <button class="tab-btn active" data-tab="mod1" type="button"><span class="done-dot"></span>1. Micobactérias (TB)</button>
+      <button class="tab-btn" data-tab="mod2" type="button"><span class="done-dot"></span>2. Introdução à Virologia</button>
+      <button class="tab-btn" data-tab="mod3" type="button"><span class="done-dot"></span>3. Infecções Virais</button>
+      <button class="tab-btn" data-tab="mod4" type="button"><span class="done-dot"></span>4. Micologia &amp; Micoses</button>
+      <button class="tab-btn turbo-tab" data-tab="turbo" type="button">⚡ Revisão Turbo (Pegadinhas)</button>
+      <button class="tab-btn quiz-tab" data-tab="quiz" type="button">📝 Simulado (28 Questões)</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- SEARCH BAR -->
+    <div class="search-bar-wrap" id="searchWrap">
+      <input type="search" id="searchInput" class="search-input" placeholder="🔎 Buscar termo no módulo atual (ex: ácidos micólicos, Mantoux, BCG, retrovírus, HIV, ergosterol, dimórfico, Cryptococcus)...">
+      <span class="search-status" id="searchStatus"></span>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MÓDULO 1: INFECÇÕES POR MICOBACTÉRIAS (TUBERCULOSE) -->
+    <!-- ========================================================= -->
+    <section id="mod1" class="panel active">
+      <div class="module-banner">
+        <div>
+          <span class="module-tag">Aula 4 • Bacteriologia Especial (Explicado do Zero)</span>
+          <h2>Infecções por Micobactérias — Foco em Tuberculose</h2>
+          <p>Nunca viu micobactérias antes? Aqui você vai entender passo a passo por que o bacilo da tuberculose tem uma "capa de cera" que trava antibióticos, como o pulmão tenta prendê-lo, como se faz o diagnóstico (Mantoux, Ziehl-Neelsen e cultura) e como funcionam a BCG e o tratamento.</p>
+        </div>
+        <button class="check-done-btn" data-done="mod1" type="button">☐ Marcar módulo como estudado</button>
+      </div>
+
+      <div class="card">
+        <h3>1️⃣ Afinal, o que é uma Micobactéria e por que ela é tão "teimosa"?</h3>
+        <p>Imagine uma bactéria que resolveu vestir uma <strong>capa de chuva feita de cera bem grossa</strong>. É exatamente isso que torna as <strong>micobactérias</strong> diferentes das bactérias comuns que você já ouviu falar!</p>
+        <ul>
+          <li><strong>O básico sobre o formato e o ritmo dela:</strong> são <strong>bacilos</strong> (bactérias compridinhas, em formato de bastão), <strong>aeróbios</strong> (precisam de oxigênio para viver — por isso adoram o pulmão!), <strong>não formam esporos</strong> (não viram "sementes dormentes" como outras bactérias) e têm <strong>crescimento muito lento</strong> (demoram semanas para se multiplicar, enquanto bactérias comuns dobram em minutos).</li>
+          <li><strong>Por que o nome "mico"-bactéria?</strong> O prefixo <em>myco</em> significa <em>"semelhante a fungo"</em>, porque quando crescem juntas elas formam fios compridos que lembram filamentos de fungo (<strong>crescimento filamentoso em corda</strong>).</li>
+          <li><strong>As 2 espécies que você precisa gravar para a prova:</strong>
+            <br>• <strong><em>Mycobacterium tuberculosis</em></strong> → causa a <strong>tuberculose</strong>. Também chamado de <strong>Bacilo de Koch</strong> (descoberto por <strong>Robert Koch em 1882</strong>, que ganhou o Nobel em 1905).
+            <br>• <strong><em>Mycobacterium leprae</em></strong> → causa a <strong>hanseníase</strong>.</li>
+          <li><strong>A famosa "capa de cera" (Parede Celular Diferenciada):</strong> diferente de outras bactérias, as micobactérias <strong>NÃO têm cápsula e NÃO têm adesinas</strong> ("ganchinhos" de fixação). No lugar da camada externa comum de LPS (lipopolissacarídeo), elas têm uma camada espessa de <strong>ácidos micólicos</strong> (gorduras especiais que formam uma <strong>camada cerosa e resistente à água</strong>). <em>Consequência prática:</em> essa cera <strong>dificulta muito a entrada de antibióticos</strong> e exige coloração especial no laboratório!</li>
+          <li><strong>Fator Corda (arma de ataque / fator de virulência):</strong> os <strong>ácidos micólicos + micosídeos</strong> se juntam e fazem os bacilos se alinharem lado a lado em fileiras compridas que parecem cordas. Esse <strong>Fator Corda</strong> está presente nas cepas virulentas (mais agressivas) do bacilo de Koch.</li>
+        </ul>
+
+        <div class="callout analogy">
+          <div class="callout-title">🧥 Analogia para Nunca Esquecer</div>
+          Pense no <em>Mycobacterium tuberculosis</em> como uma pessoa andando na chuva com uma <strong>capa impermeável de cera</strong> (<strong>ácidos micólicos</strong>): a água e a maioria dos remédios escorrem e não entram fácil. Por isso o tratamento da tuberculose é longo e precisa de vários remédios juntos!
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2️⃣ Como a Tuberculose entra no pulmão e quem tem mais risco no Brasil?</h3>
+        <p>Quando uma pessoa com tuberculose ativa nos pulmões <strong>tosse, fala ou espirra</strong>, ela solta gotinhas microscópicas no ar (<strong>microgotículas</strong>). Se outra pessoa respira essas gotinhas, o bacilo desce até o fundo do pulmão (os <strong>alvéolos</strong>). Olha a sequência que acontece lá dentro:</p>
+        <div class="flow-chain">
+          <span class="flow-step">1. Tosse/espirro solta microgotículas no ar</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">2. Pessoa respira e o bacilo chega nos alvéolos</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">3. Células de defesa chegam (Macrófagos, Linfócitos e mensageiros: IL-2, IL-6, IL-8, IL-4, IFN)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">4. Corpo constrói uma "prisão" ao redor: Granuloma + Necrose Caseosa + Fibrina</span>
+        </div>
+        <p><strong>O que é esse tal de Granuloma com Necrose Caseosa?</strong> Como o sistema imune tem dificuldade para matar o bacilo de cara por causa da capa de cera, ele faz uma <strong>barreira de células (granuloma)</strong> para "prender" a bactéria lá dentro. O miolo dessa "prisão" morre e fica com aspecto de queijo esfarelado (<strong>necrose caseosa</strong> — <em>caseum</em> = queijo em latim!), cercado por <strong>fibrina</strong>. Em <strong>~90% das pessoas saudáveis</strong>, essa prisão funciona e segura o bacilo parado! Nos outros <strong>~10%</strong> (ou se a imunidade cair depois), o bacilo escapa, se multiplica ou cai no sangue e se espalha pelo corpo.</p>
+
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>📊 Números da Tuberculose no Brasil (Atenção na prova!)</h4>
+            <ul>
+              <li><strong>85.697 casos novos</strong> notificados em 2024.</li>
+              <li>O Brasil ocupa o <strong>20º lugar no mundo</strong> em número de casos.</li>
+              <li>É a <strong>2ª causa de mortes</strong> por doenças infecciosas.</li>
+              <li>É a <strong>1ª causa de mortes em pacientes com AIDS!</strong> (Como o HIV derruba a defesa, o bacilo "preso" se solta fácil.)</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>⚠️ Quem tem mais risco de adoecer?</h4>
+            <ul>
+              <li><strong>Moradores de rua / desabrigados:</strong> <strong>67×</strong> mais risco!</li>
+              <li><strong>Pessoas vivendo com HIV+:</strong> <strong>35×</strong> mais risco.</li>
+              <li><strong>População carcerária (presídios):</strong> <strong>28×</strong> mais risco (ambientes fechados e pouco ventilados).</li>
+              <li><strong>Indígenas:</strong> <strong>3×</strong> mais risco.</li>
+              <li>Também entram na lista: contato próximo com TB ativa, imunocomprometidos, abuso de substâncias e <strong>profissionais da saúde</strong> (incluindo fisioterapeutas!).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout clinical">
+          <div class="callout-title">🏥 Por que isso importa na Fisioterapia?</div>
+          Na <strong>Fisioterapia Respiratória</strong> (hospital, UTI ou ambulatório), você trabalha diretamente com pacientes que tossem e fazem exercícios respiratórios. Conhecer a transmissão por aerossóis/microgotículas e reconhecer a <strong>tosse por mais de 3 semanas</strong> protege você (uso de máscara N95/PFF2 em isolamento respiratório) e evita surtos na enfermaria!
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3️⃣ Como descobrimos se o paciente tem Tuberculose? (Os 3 Pilares)</h3>
+        <div class="grid-3">
+          <div class="mini-box">
+            <h4>🩺 1. Sintomas + Raio-X de Tórax</h4>
+            <p>O corpo dá sinais bem característicos:</p>
+            <ul>
+              <li><strong>Tosse por mais de 3 semanas</strong> (sinal clássico de alerta!).</li>
+              <li><strong>Febre</strong> (bem comum ao <strong>entardecer</strong>).</li>
+              <li><strong>Suores noturnos</strong> (acordar molhado de suor) e dor no peito.</li>
+              <li>Perda de apetite/peso e cansaço fácil.</li>
+              <li><strong>Raio-X de tórax:</strong> mostra manchas, buracos ou áreas densas (infiltrações, <strong>cavitações</strong> ou consolidações/granulomas), principalmente na <strong>parte superior dos pulmões</strong> (onde há mais oxigênio!).</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>💉 2. Teste de Mantoux (PPD)</h4>
+            <p>Aplica-se <strong>0,5 mL de PPD</strong> (uma proteína purificada da bactéria) bem rasinho na pele (<strong>intradérmica</strong>). Depois de <strong>48 a 72 horas</strong>, mede-se o tamanho do "caroço" duro (<strong>pápula</strong>) com uma régua:</p>
+            <ul>
+              <li><strong>0 a 4 mm:</strong> não-reator.</li>
+              <li><strong>5 a 9 mm:</strong> reator fraco.</li>
+              <li><strong>≥ 10 mm:</strong> reator forte.</li>
+            </ul>
+            <p><strong>⚠️ PEGADINHA CLÁSSICA:</strong> um teste forte <strong>NÃO significa que a pessoa está doente agora!</strong> Ele só mostra que o corpo já teve <strong>contato prévio com o bacilo</strong> (ou seja, já "conhece" a bactéria).</p>
+          </div>
+          <div class="mini-box">
+            <h4>🔬 3. Exames de Laboratório</h4>
+            <ul>
+              <li><strong>Baciloscopia (exame do escarro — BAAR):</strong> como a capa de cera não pega a tinta comum (Gram), usa-se a coloração especial de <strong>Ziehl-Neelsen</strong> → no microscópio, os bacilos brilham <strong>avermelhados</strong>!</li>
+              <li><strong>Cultura:</strong> coloca-se a amostra no <strong>Ágar Löwenstein-Jensen (LJ)</strong>. Como a micobactéria cresce muito devagar, demora de <strong>3 a 8 semanas</strong> para crescer!</li>
+              <li>Também existem biópsia e teste molecular rápido.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>4️⃣ Prevenção (Vacina BCG) &amp; Tratamento (RIPE + TDO)</h3>
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>🛡️ Vacina BCG (A marquinha no braço direito!)</h4>
+            <ul>
+              <li>Sigla de <strong>Bacilo Calmette-Guérin</strong>: feita com a bactéria prima do boi enfraquecida (<strong><em>Mycobacterium bovis</em> atenuados</strong>). Primeiro teste em humanos: <strong>1921</strong>, Instituto Pasteur.</li>
+              <li>Obrigatória no SUS desde <strong>1976</strong>: <strong>dose única, intradérmica, no braço direito, ao nascimento</strong>.</li>
+              <li><strong>⚠️ PEGADINHA DE PROVA:</strong> a BCG não evita 100% da tuberculose pulmonar leve no adulto; o grande papel dela é proteger crianças contra as <strong>FORMAS GRAVES</strong>: <strong>tuberculose miliar</strong> (espalhada pelo corpo) e <strong>tuberculose meníngea</strong> (nas meninges do cérebro)!</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>💊 Tratamento (Esquema RIPE) &amp; TDO</h4>
+            <ul>
+              <li><strong>Curiosidade histórica:</strong> antes dos remédios, pacientes iam para sanatórios nas montanhas (ex.: Campos do Jordão). Em <strong>1946</strong> surgiu o primeiro antibiótico contra TB: <em>estreptomicina</em>.</li>
+              <li><strong>Por que usamos 4 remédios juntos (RIPE)?</strong> Para atacar a bactéria em frentes diferentes e evitar resistência:
+                <br>• <strong>Isoniazida</strong> e <strong>Etambutol:</strong> travam a construção da <em>parede celular</em> (ácidos micólicos / arabinogalactana — "quebram a capa de cera").
+                <br>• <strong>Rifampicina:</strong> bloqueia a <em>RNA polimerase</em> (impede a bactéria de ler seu código genético).
+                <br>• <strong>Pirazinamida:</strong> bagunça a membrana plasmática e corta a energia (ATP) da bactéria.</li>
+              <li><strong>TDO (Tratamento Diretamente Observado):</strong> como o tratamento é longo e o paciente melhora rápido dos sintomas, muitos paravam antes da hora. No TDO, um profissional de saúde entrega, observa e registra cada dose tomada — o objetivo central é <strong>reduzir a taxa de abandono!</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-nav-footer">
+        <span></span>
+        <button class="action-btn primary" onclick="goTab('mod2')" type="button">Próximo: 2. Introdução à Virologia →</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- MÓDULO 2: INTRODUÇÃO À VIROLOGIA -->
+    <!-- ========================================================= -->
+    <section id="mod2" class="panel">
+      <div class="module-banner">
+        <div>
+          <span class="module-tag">Aula 5 • Virologia Básica (Explicado do Zero)</span>
+          <h2>Introdução à Virologia: O que são Vírus, Estrutura e Como Eles se Multiplicam</h2>
+          <p>Se você nunca estudou virologia: pense no vírus como um "pen drive com instruções de invasão" que não tem fábrica própria e sequestra a sua célula para fazer cópias de si mesmo. Entenda toda a anatomia viral, os 6 passos da multiplicação e as famílias virais humanas.</p>
+        </div>
+        <button class="check-done-btn" data-done="mod2" type="button">☐ Marcar módulo como estudado</button>
+      </div>
+
+      <div class="card">
+        <h3>1️⃣ O que é um Vírus? (Descoberta, Papel na Natureza e Anatomia)</h3>
+        <div class="callout analogy">
+          <div class="callout-title">💾 Analogia do Pen Drive Pirata</div>
+          Uma bactéria é como uma "mini fábrica completa" (tem célula, energia e faz suas próprias peças). Já um <strong>vírus</strong> NÃO é uma célula — ele é como um <strong>pen drive contendo um manual de instruções (DNA ou RNA) dentro de uma caixinha de proteína</strong>. Jogado na mesa (fora da célula), o pen drive não faz nada (é <em>inerte</em>). Mas, quando plugado no computador (dentro da nossa célula), ele assume o controle da máquina e manda a célula fabricar milhares de novos vírus!
+        </div>
+
+        <ul>
+          <li><strong>De onde vem o nome e qual foi o 1º vírus?</strong> <em>Vírus</em> significa <strong>"veneno"</strong> em latim (termo adotado em 1930 para agentes tão minúsculos que passavam por filtros de bactérias). O primeiro vírus isolado foi o <strong>Tobamovirus</strong> (Vírus do Mosaico do Tabaco, de plantas!) por <strong>Wendell Stanley em 1935</strong>.</li>
+          <li><strong>Eles só causam doença? Não!</strong> Na natureza, os vírus são a <strong>entidade biológica mais abundante do planeta</strong>; atuam como grandes motores da <strong>evolução</strong> (levando genes de uma espécie para outra), regulam populações hospedeiras e ajudam até a proteger a nossa microbiota.</li>
+          <li><strong>Regras de ouro dos vírus (sempre caem em prova!):</strong>
+            <br>• São <strong>acelulares</strong> (não têm célula, nem organelas, nem metabolismo próprio — toda a energia vem da célula invadida).
+            <br>• São <strong>parasitas intracelulares obrigatórios</strong> (só conseguem se multiplicar <em>dentro</em> de uma célula viva).
+            <br>• Possuem <strong>UM ÚNICO tipo de ácido nucleico</strong>: ou têm <strong>DNA</strong> ou têm <strong>RNA</strong> — <strong>NUNCA os dois juntos!</strong>
+            <br>• Infectam praticamente todos os seres vivos (animais, plantas, fungos, bactérias e protistas).</li>
+        </ul>
+
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>🧱 Partes de um Vírus ("Anatomia do Vírion")</h4>
+            <ul>
+              <li><strong>Vírion:</strong> é o nome chique para a partícula viral <strong>completa e pronta para viajar</strong> de um hospedeiro para outro (genoma + capsídeo).</li>
+              <li><strong>Capsídeo:</strong> a "caixinha" de proteína que protege o material genético lá dentro.</li>
+              <li><strong>Envelope lipídico (nem todo vírus tem!):</strong> uma "capinha de gordura" por fora do capsídeo. <em>De onde ela vem?</em> O vírus <strong>rouba um pedaço da membrana citoplasmática da nossa própria célula</strong> na hora de sair! (Ex.: gripe, HIV). Quando o vírus NÃO tem essa capa de gordura, chamamos de <strong>vírus nu</strong> (não envelopado).</li>
+              <li><strong>Espículas:</strong> são as "chavinhas" espetadas na superfície do vírus. Elas encaixam nas "fechaduras" (receptores) da célula humana para abrir a porta!</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📐 Formatos &amp; Tamanho Minúsculo</h4>
+            <ul>
+              <li><strong>4 Morfologias clássicas:</strong> <strong>Helicoidal</strong> (formato de mola/tubo), <strong>Poliédrico / icosaédrico</strong> (formato de dado com várias faces), <strong>Envelopado</strong> e <strong>Complexo</strong> (parece uma "aranha espacial", como os bacteriófagos).</li>
+              <li><strong>Escala em nanômetros (nm):</strong> vírus são absurdamente pequenos — medem cerca de <strong>24 a 300 nm</strong>. Para comparar, uma única hemácia (glóbulo vermelho do sangue) mede cerca de <strong>10.000 nm</strong>!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2️⃣ Como o Vírus sequestra a célula? (Os 6 Passos + DNA vs. RNA vs. Retrovírus)</h3>
+        <p>Todo vírus segue um roteiro parecido para invadir a célula e sair com milhares de cópias novas:</p>
+        <div class="flow-chain">
+          <span class="flow-step">1. Adsorção ("encaixa a chave na fechadura" / receptor)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">2. Fusão/Endocitose* + Penetração (entra na célula)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">3. Desnudamento ("abre a caixa" e solta o DNA/RNA)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">4. Biossíntese (célula fabrica peças e cópias do genoma)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">5. Maturação (monta os novos vírus)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">6. Liberação (saem para infectar outras células)</span>
+        </div>
+        <p style="font-size:0.86rem; color:var(--text-muted); margin-top:-6px;">*Atenção à pegadinha: a <strong>fusão do envelope lipídico</strong> com a membrana da célula acontece <strong>apenas em vírus envelopados</strong> (vírus nus não têm envelope!).</p>
+
+        <h4>🧬 Qual a diferença entre vírus de DNA, de RNA e Retrovírus?</h4>
+        <p>Pense na célula humana como uma cozinha: o <strong>núcleo</strong> é onde fica o livro de receitas original (nosso DNA), e o <strong>citoplasma</strong> é a bancada onde os cozinheiros (ribossomos) leem receitas prontas (<strong>mRNA</strong>) para cozinhar proteínas:</p>
+        <ul>
+          <li><strong>Vírus de DNA:</strong> o código dele precisa ir até o <strong>núcleo</strong> para ser copiado em receitas (mRNA) e replicado; depois, no citoplasma, a célula monta as proteínas do capsídeo.</li>
+          <li><strong>Vírus de RNA (trabalham direto no citoplasma!):</strong> usam uma enzima própria chamada <strong>RNA polimerase dependente de RNA</strong>.
+            <br>• Se for <strong>ssRNA+ (fita simples positiva / senso):</strong> já vem pronto no idioma da cozinha (funciona como mRNA) e faz um molde negativo para gerar mais cópias.
+            <br>• Se for <strong>ssRNA− (fita simples negativa / antissenso):</strong> vem "espelhado/de trás para frente", então <strong>precisa primeiro fabricar uma fita positiva (mRNA)</strong> antes de conseguir produzir proteínas!
+            <br>• Se for <strong>dsRNA:</strong> tem dupla fita de RNA (ex.: Rotavírus / <em>Reoviridae</em>).</li>
+          <li><strong>Retrovírus (ex.: HIV — o "espião reverso"):</strong> traz <strong>2 fitas de RNA+</strong> e <strong>3 enzimas especiais</strong> dentro da mochila:
+            <br>1. <strong>Transcriptase reversa:</strong> faz o caminho ao contrário — transforma o <strong>RNA viral em DNA</strong>!
+            <br>2. <strong>Integrase:</strong> "cola" esse DNA do vírus dentro do DNA da nossa própria célula, formando um <strong>PROVÍRUS</strong> (por isso é tão difícil curar o HIV!).
+            <br>3. <strong>Protease:</strong> "recorta" e ajusta as proteínas virais novas. Depois ele sai da célula por <strong>brotamento</strong> (roubando um pedaço da membrana como envelope).</li>
+        </ul>
+
+        <div class="diagram-box">
+          <svg viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparação dos ciclos de DNA, RNA e Retrovírus">
+            <rect x="8" y="8" width="744" height="174" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+            <text x="380" y="32" text-anchor="middle" font-size="13.5" font-weight="800" fill="#1f335c">Como cada tipo de vírus se multiplica na célula?</text>
+
+            <rect x="22" y="48" width="224" height="120" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+            <text x="134" y="68" text-anchor="middle" font-size="12" font-weight="800" fill="#0c4a6e">Vírus de DNA (ex.: Papovavirus)</text>
+            <text x="134" y="89" text-anchor="middle" font-size="10.8" fill="#0369a1">• DNA viral vai ao NÚCLEO</text>
+            <text x="134" y="106" text-anchor="middle" font-size="10.8" fill="#0369a1">• Transcreve mRNAs e replica DNA</text>
+            <text x="134" y="123" text-anchor="middle" font-size="10.8" fill="#0369a1">• Tradução tardia faz proteínas do</text>
+            <text x="134" y="139" text-anchor="middle" font-size="10.8" fill="#0369a1">  capsídeo no citoplasma</text>
+            <text x="134" y="156" text-anchor="middle" font-size="10.8" font-weight="700" fill="#0c4a6e">→ Maturação e Liberação</text>
+
+            <rect x="268" y="48" width="224" height="120" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="380" y="68" text-anchor="middle" font-size="12" font-weight="800" fill="#14532d">Vírus de RNA (Citoplasma)</text>
+            <text x="380" y="88" text-anchor="middle" font-size="10.5" fill="#166534">Usam RNA polimerase dep. de RNA:</text>
+            <text x="380" y="105" text-anchor="middle" font-size="10.5" fill="#166534">• ssRNA+ (senso): faz molde (-)</text>
+            <text x="380" y="122" text-anchor="middle" font-size="10.5" fill="#166534">• ssRNA- (antissenso): precisa fazer</text>
+            <text x="380" y="137" text-anchor="middle" font-size="10.5" fill="#166534">  fita positiva (mRNA) primeiro!</text>
+            <text x="380" y="155" text-anchor="middle" font-size="10.5" fill="#166534">• dsRNA (dupla fita): ex. Reoviridae</text>
+
+            <rect x="514" y="48" width="224" height="120" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+            <text x="626" y="68" text-anchor="middle" font-size="12" font-weight="800" fill="#581c87">Retrovírus (ex.: HIV)</text>
+            <text x="626" y="88" text-anchor="middle" font-size="10.5" fill="#6b21a8">• 2 fitas RNA+ + 3 enzimas virais:</text>
+            <text x="626" y="105" text-anchor="middle" font-size="10.5" font-weight="700" fill="#581c87">1. Transcriptase reversa (RNA→DNA)</text>
+            <text x="626" y="122" text-anchor="middle" font-size="10.5" font-weight="700" fill="#581c87">2. Integrase (forma PROVÍRUS no DNA)</text>
+            <text x="626" y="139" text-anchor="middle" font-size="10.5" fill="#6b21a8">3. Protease (processa proteínas)</text>
+            <text x="626" y="156" text-anchor="middle" font-size="10.5" fill="#6b21a8">→ Sai por BROTAMENTO (com envelope)</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3️⃣ Mapa de Consulta Rápida das Famílias Virais Humanas</h3>
+        <p>Não precisa decorar toda a tabela de uma vez — use como dicionário visual focando nos <strong>exemplos em negrito</strong> e nas duas curiosidades que professores adoram cobrar (<strong>Hepatite B</strong> e <strong>Hepatite D</strong>):</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tipo de Genoma / Envelope</th><th>Famílias Principais</th><th>Doenças Conhecidas (O que cai na prova)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>DNA fita simples, NÃO envelopado</strong></td><td><code>Parvoviridae</code></td><td>Parvovírus B19 (quinta doença infantil; anemia em imunocomprometidos).</td></tr>
+              <tr><td><strong>DNA dupla fita, NÃO envelopado</strong></td><td><code>Adenoviridae</code>, <code>Papovaviridae</code></td><td>Infecções respiratórias; <strong>Papillomavirus (HPV)</strong> → verrugas e câncer de colo de útero/anal.</td></tr>
+              <tr><td><strong>DNA dupla fita, ENVELOPADO</strong></td><td><code>Poxviridae</code>, <code>Herpesviridae</code>, <code>Hepadnaviridae</code></td><td>Varíola/molusco contagioso; <strong>Herpes (HHV-1/2), Catapora/Zóster (HHV-3), Mononucleose/Burkitt (HHV-4)</strong>; <strong>Hepatite B</strong> (<em>pegadinha:</em> é vírus de DNA, mas também usa transcriptase reversa a partir de mRNA!).</td></tr>
+              <tr><td><strong>RNA+ fita simples, NÃO envelopado</strong></td><td><code>Picornaviridae</code>, <code>Caliciviridae</code></td><td><strong>Poliovírus, Rinovírus</strong> (resfriado comum), <strong>Hepatite A</strong>; Hepatite E e <em>Norovirus</em> (gastroenterite).</td></tr>
+              <tr><td><strong>RNA+ fita simples, ENVELOPADO</strong></td><td><code>Togaviridae</code>, <code>Flaviviridae</code>, <code>Coronaviridae</code></td><td><strong>Rubéola</strong> e Chikungunya; <strong>Dengue, Febre Amarela e Hepatite C</strong>; SARS, MERS e resfriados.</td></tr>
+              <tr><td><strong>RNA− fita única (envelopado)</strong></td><td><code>Rhabdoviridae</code>, <code>Filoviridae</code>, <code>Paramyxoviridae</code>, <code>Deltaviridae</code></td><td><strong>Raiva</strong> (formato de projétil/bala); <strong>Ebola e Marburg</strong>; <strong>Sarampo e Caxumba</strong>; <strong>Hepatite D</strong> (<em>pegadinha:</em> vírus "carona", <strong>só infecta quem também tem Hepatite B!</strong>).</td></tr>
+              <tr><td><strong>RNA− segmentado (envelopado)</strong></td><td><code>Orthomyxoviridae</code>, <code>Bunyaviridae</code>, <code>Arenaviridae</code></td><td><strong>Influenza A, B e C</strong> (suas espículas aglutinam hemácias); Hantavírus (roedores); Febre de Lassa.</td></tr>
+              <tr><td><strong>RNA+ que faz DNA / dsRNA</strong></td><td><code>Retroviridae</code> / <code>Reoviridae</code></td><td><strong>HIV (Lentivirus)</strong> e oncovírus / <strong>Rotavírus</strong> (dsRNA não envelopado).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="module-nav-footer">
+        <button class="action-btn" onclick="goTab('mod1')" type="button">← Anterior: Micobactérias (TB)</button>
+        <button class="action-btn primary" onclick="goTab('mod3')" type="button">Próximo: 3. Infecções Virais →</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- MÓDULO 3: INFECÇÕES VIRAIS -->
+    <!-- ========================================================= -->
+    <section id="mod3" class="panel">
+      <div class="module-banner">
+        <div>
+          <span class="module-tag">Aula 6 • Principais Viroses Humanas (Explicado do Zero)</span>
+          <h2>Infecções Virais: Como Pega, O que Causa e Como Prevenir</h2>
+          <p>Em vez de tentar decorar 15 doenças soltas, agrupamos todas as viroses da aula pelo jeito como elas entram no corpo: contato íntimo/sangue, pelo ar, por água/alimentos ou por animais. Muito mais fácil de lembrar na hora da prova!</p>
+        </div>
+        <button class="check-done-btn" data-done="mod3" type="button">☐ Marcar módulo como estudado</button>
+      </div>
+
+      <div class="card">
+        <h3>1️⃣ Grupo 1 — Transmissão Sexual, Sanguínea ou Contato Direto</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Doença / Vírus</th><th>Como pega?</th><th>O que faz no corpo (Pontos-Chave)</th><th>Tratamento &amp; Prevenção</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Herpes Bucal</strong><br>(<em>Herpes simplex I</em>)</td>
+                <td>Vias aéreas, contato direto, objetos contaminados (copos, batom)</td>
+                <td>Bolhas/feridas nos lábios. <strong>~90% da população</strong> tem o vírus quietinho no corpo (maioria sem sintomas). As crises voltam com <strong>estresse, alteração hormonal ou sol excessivo</strong>.</td>
+                <td>Pomadas antivirais que freiam o vírus. Não compartilhar copos/talheres durante crises.</td>
+              </tr>
+              <tr>
+                <td><strong>Herpes Genital</strong><br>(<em>Herpes simplex II</em>)</td>
+                <td>Contato sexual</td>
+                <td>Feridas dolorosas na base do pênis/vagina com líquido viscoso, coceira, ardor e dor ao urinar. <strong>Alerta de prova:</strong> <strong>em estágio avançado, a camisinha é pouco eficiente</strong> (porque pode haver lesões em áreas que o preservativo não cobre!).</td>
+                <td>Pomadas antivirais + <strong>abstinência sexual durante as crises</strong> + preservativos.</td>
+              </tr>
+              <tr>
+                <td><strong>Hepatite B e C</strong></td>
+                <td>Sangue e fluidos (sexo sem proteção, seringas, transfusão)</td>
+                <td>Inflamação do fígado, <strong>icterícia</strong> (pele e olhos amarelados), náuseas e vômitos. <strong>Atenção:</strong> a <strong>Hepatite C sem tratamento pode evoluir para CIRROSE</strong> (cicatrização grave do fígado)!</td>
+                <td>Antivirais. <strong>Existe vacina contra Hepatite B!</strong> Preservativo, bancos de sangue testados e seringas descartáveis.</td>
+              </tr>
+              <tr>
+                <td><strong>HPV</strong><br>(Papilomavírus)</td>
+                <td>Contato sexual</td>
+                <td>Causa verrugas genitais e <strong>lesões que podem virar câncer de colo de útero</strong>. Pode ficar anos "adormecido" (em latência) sem dar sinal.</td>
+                <td>Retirada cirúrgica das lesões. Camisinha, exame preventivo (<strong>Papanicolau</strong>) e <strong>Vacina gratuita no SUS (meninas e meninos de 9 a 14 anos)</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout trap">
+          <div class="callout-title">🔥 SUPER FOCO DE PROVA: Entendendo HIV vs. AIDS de uma vez por todas!</div>
+          • <strong>Como pega?</strong> Por líquidos corporais infectados: <strong>sangue, esperma, secreções vaginais, leite materno</strong> (por isso mães soropositivas devem evitar amamentar) e durante a gestação (via transplacentária).<br>
+          • <strong>Onde o HIV ataca?</strong> Ele invade e destrói os <strong>Linfócitos T CD4</strong> — pense neles como os "generais" do sistema imune que avisam os outros soldados quando há invasão. Quando os T CD4 caem muito, o corpo fica sem defesa e surgem as <strong>doenças oportunistas</strong> (<strong>tuberculose, candidíase, câncer e pneumonia</strong> — que são a principal causa de morte!).<br>
+          • <strong>Diferença essencial: Soropositivo (HIV+) ≠ pessoa com AIDS!</strong> O vírus pode ficar "dormindo" escondido dentro do DNA dos T CD4 (<strong>ciclo lisogênico / latência</strong>) por <strong>cerca de 10 anos sem causar sintomas</strong> — mas atenção: <strong>essa pessoa JÁ PODE transmitir o vírus!</strong> Só quando o vírus "acorda" e passa a destruir as células (<strong>ciclo lítico</strong>) é que aparecem os sintomas da AIDS (febre, ínguas, dores, lipoatrofia facial) e as doenças oportunistas. Ainda não existe cura definitiva, mas os <strong>antirretrovirais</strong> travam a multiplicação do vírus e garantem vida longa e saudável.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2️⃣ Grupo 2 — Viroses Respiratórias &amp; de Manchas na Pele (Exantemáticas)</h3>
+        <p><em>Exantema</em> é apenas o nome médico para <strong>manchas ou erupções vermelhas na pele</strong>. Repare como a maioria delas já tem vacina no calendário infantil:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Doença</th><th>Quem causa &amp; O que a pessoa sente</th><th>Por que preocupa? (Alerta de Prova)</th><th>Como prevenir (Vacina!)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sarampo</strong></td>
+                <td>Vírus do sarampo — febre alta, tosse seca e manchas vermelhas espalhadas pelo corpo.</td>
+                <td>Pode complicar para <strong>pneumonia, otite média (infecção de ouvido) e encefalite</strong> (inflamação no cérebro).</td>
+                <td>Vacina <strong>Tríplice viral</strong> (protege contra <strong>Sa</strong>rampo, <strong>Ca</strong>xumba e <strong>Ru</strong>béola).</td>
+              </tr>
+              <tr>
+                <td><strong>Caxumba</strong></td>
+                <td>Vírus da parótida infecciosa — inchaço dolorido das <strong>glândulas parótidas</strong> (glândulas de saliva perto da bochecha/orelha).</td>
+                <td>Mais raramente pode atingir o <strong>sistema nervoso e os testículos</strong>.</td>
+                <td>Vacina <strong>Tríplice viral</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Rubéola</strong></td>
+                <td>Vírus da rubéola — manchas vermelhas na pele (costuma ser leve em adultos).</td>
+                <td><strong>🚨 PERIGO GRAVÍSSIMO NA GESTAÇÃO:</strong> o vírus atravessa a placenta e pode causar <strong>cegueira, surdez e retardo mental</strong> no bebê!</td>
+                <td><strong>Tríplice viral</strong> + pré-natal + vacinação de mulheres em idade fértil antes de engravidar.</td>
+              </tr>
+              <tr>
+                <td><strong>Catapora (Varicela)</strong></td>
+                <td>Vírus <strong>Varicela-zóster</strong> — bolinhas, bolhinhas com líquido e casquinhas (pápulas, vesículas e crostas) com <strong>coceira intensa</strong>.</td>
+                <td><strong>Mesmo vírus, dois nomes!</strong> Na criança causa <strong>catapora (varicela)</strong>; depois fica escondido nos nervos e, se reativar no adulto, vira o <strong>cobreiro (herpes-zóster)</strong>!</td>
+                <td>Vacina <strong>Tetraviral</strong> (tríplice viral + varicela, na infância).</td>
+              </tr>
+              <tr>
+                <td><strong>Gripe &amp; Gripe Aviária (H5N1)</strong></td>
+                <td><strong>Influenza</strong> (febre, calafrios, dores no corpo) e <strong>Influenza H5N1</strong> (secreções de aves infectadas → febre alta e problemas respiratórios graves).</td>
+                <td>No <strong>H5N1</strong>, a maioria das aves morre em 24h; o grande medo sanitário é uma mutação permitir <strong>transmissão fácil de humano para humano</strong>.</td>
+                <td>Gripe comum: vacina anual + higiene. Aviária: sacrifício sanitário das aves infectadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3️⃣ Grupo 3 — Água/Alimentos, Mosquitos e Mordidas de Animais</h3>
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>🚰 Hepatite A (Via Fecal-Oral)</h4>
+            <p>Entra pela boca através de <strong>água ou alimentos contaminados</strong> com fezes contendo o vírus. Causa inflamação do fígado, febre, <strong>icterícia</strong> (pele/olhos amarelos), náuseas e vômitos. Geralmente cura sozinha (autolimitada).<br><strong>Prevenção principal:</strong> educação sanitária e <strong>saneamento básico</strong>.</p>
+          </div>
+          <div class="mini-box">
+            <h4>🦽 Poliomielite (Paralisia Infantil)</h4>
+            <p>Causada pelo <strong>Poliovírus</strong> (água/alimentos contaminados e contato). <strong>Erradicada no Brasil desde 1989!</strong> O vírus ataca o sistema nervoso e <strong>destrói neurônios motores → causando paralisia de membros</strong> (histórico muito importante na Fisioterapia Neurofuncional!).<br><strong>Esquema vacinal cobrado em aula:</strong> <strong>VIP</strong> (inativada/injetável) aos <strong>2, 4 e 6 meses</strong> + <strong>VOP</strong> (oral/gotinha) nos reforços de <strong>15 meses e 4 anos</strong>.</p>
+          </div>
+          <div class="mini-box">
+            <h4>🦟 Dengue</h4>
+            <p>Transmitida pela picada da <strong>fêmea do mosquito <em>Aedes aegypti</em></strong>. Causa febre súbita, dores musculares fortes e tonteira. Na <strong>forma hemorrágica</strong>, atrapalha a coagulação e provoca sangramentos na pele e órgãos.<br><strong>⚠️ REGRA DE OURO:</strong> <strong>NUNCA usar Aspirina (AAS)</strong> na suspeita de dengue, pois ela afina ainda mais o sangue e piora hemorragias! Prevenção: acabar com água parada.</p>
+          </div>
+          <div class="mini-box">
+            <h4>🦇 Raiva</h4>
+            <p>Transmitida pela saliva/mordida de mamíferos infectados (na cidade: <strong>cães e gatos</strong>; no campo: <strong>morcegos hematófagos</strong> que se alimentam de sangue). Atinge o cérebro causando encefalite, convulsões, salivação intensa, espasmo na garganta (glote) e <strong>hidrofobia</strong> (dificuldade/medo de engolir água).<br><strong>Quase 100% fatal (sem cura)!</strong> Prevenção: vacinar cães/gatos + vacina antirrábica humana após exposição.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-nav-footer">
+        <button class="action-btn" onclick="goTab('mod2')" type="button">← Anterior: Introdução à Virologia</button>
+        <button class="action-btn primary" onclick="goTab('mod4')" type="button">Próximo: 4. Micologia & Micoses →</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- MÓDULO 4: INTRODUÇÃO À MICOLOGIA E INFECÇÕES FÚNGICAS -->
+    <!-- ========================================================= -->
+    <section id="mod4" class="panel">
+      <div class="module-banner">
+        <div>
+          <span class="module-tag">Aula 7 • Micologia Médica (Explicado do Zero)</span>
+          <h2>Introdução à Micologia e Infecções Fúngicas (Micoses)</h2>
+          <p>Fungos não são plantas nem bactérias! Aqui você entende a diferença entre bolor, levedura e fungo "camaleão" (dimórfico), descobre por que o ergosterol é o segredo dos remédios antifúngicos e domina os 4 grupos de micoses — incluindo a Criptococose.</p>
+        </div>
+        <button class="check-done-btn" data-done="mod4" type="button">☐ Marcar módulo como estudado</button>
+      </div>
+
+      <div class="card">
+        <h3>1️⃣ O que são Fungos e quais são os 3 jeitos deles crescerem?</h3>
+        <p>Os fungos têm seu próprio reino: o <strong>Reino Fungi</strong> (e a ciência que os estuda chama-se <strong>Micologia</strong>). Eles não fazem fotossíntese como plantas — eles se alimentam <strong>absorvendo matéria orgânica</strong> do ambiente. Quase todos são formados por várias células (<strong>multicelulares</strong>), <strong>com exceção das leveduras</strong> (que têm uma única célula!). Eles se espalham usando "sementinhas" microscópicas chamadas <strong>esporos</strong> (sexuados ou assexuados).</p>
+
+        <div class="grid-3">
+          <div class="mini-box">
+            <h4>🧵 1. Filamentosos (Bolores / Mofos)</h4>
+            <p>Sabe o mofo felpudo que cresce no pão velho? É um fungo filamentoso!</p>
+            <ul>
+              <li>Cada "fiozinho" microscópico chama-se <strong>Hifa</strong>.</li>
+              <li>Um emaranhado de vários fios juntos chama-se <strong>Micélio</strong>.</li>
+              <li><strong>Hifas septadas</strong> = fios com "paredinhas" dividindo em compartimentos (septos). <strong>Hifas cenocíticas</strong> = tubo contínuo, sem divisórias!</li>
+              <li>Células retangulares destacadas = <strong>Artrosporos / Artroconídeos</strong>.</li>
+              <li><strong>Pegadinha de vocabulário:</strong> <strong>Esporo</strong> vale para reprodução sexuada ou assexuada; já <strong>Conídeo</strong> é <em>exclusivamente assexuado (feito por mitose)!</em></li>
+              <li>A olho nu (macroscopia): parecem algodão, veludo ou "cérebro" (cerebriforme); no laboratório olha-se a cor da frente (<strong>anverso</strong>) e do verso da placa (<strong>reverso</strong>).</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🫧 2. Leveduriformes (Leveduras)</h4>
+            <p>Sabe o fermento de pão ou a <em>Candida</em>? São leveduras!</p>
+            <ul>
+              <li>São <strong>unicelulares</strong> e redondinhas/ovais — cada célula é um <strong>Blasto</strong> (e seus filhotes assexuados são <strong>Blastoconídeos</strong>).</li>
+              <li><strong>Pseudo-hifas:</strong> às vezes a levedura dá "brotinhos" que <em>não se soltam</em> e ficam grudados em fila, fingindo ser uma hifa!</li>
+              <li><strong>Brotamento:</strong> divisão <em>desigual</em> (nasce um brotinho menor grudado na célula-mãe).</li>
+              <li><strong>Fissão:</strong> a célula se parte ao meio em <em>duas células iguais</em> (fazendo colônias parecidas com bactérias).</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🌡️ 3. Fungos Dimórficos ("Os Camaleões" — CAI MUITO!)</h4>
+            <p>Esses fungos mudam de forma conforme a <strong>temperatura</strong> (ou nível de CO₂), como se trocassem de roupa para invadir o corpo:</p>
+            <ul>
+              <li><strong>A 25 °C (temperatura ambiente / natureza):</strong> crescem como <strong>Filamentoso (bolor)</strong>.</li>
+              <li><strong>A 37 °C (temperatura do corpo humano):</strong> viram <strong>Levedura</strong>!</li>
+            </ul>
+            <p><strong>Exemplos clássicos de prova:</strong> <em>Coccidioides immitis</em>, <em>Paracoccidioides brasiliensis</em>, <em>Blastomyces dermatitidis</em>, <em>Histoplasma capsulatum</em> e <em>Sporothrix brasiliensis</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2️⃣ Parede Celular, Ergosterol (Alvo dos Remédios) e Cor dos Fungos</h3>
+        <p>Como fungos são células eucariontes (parecidas com as nossas!), matar um fungo sem machucar o paciente exige mirar no que <strong>só o fungo tem</strong>. O segredo está na membrana dele:</p>
+        <ul>
+          <li><strong>Parede celular rígida:</strong> feita de <strong>β-glucanos (β-1,3 e β-1,6)</strong>, <strong>quitina</strong> e <strong>manoproteínas</strong> (nossas células NÃO têm parede celular!).</li>
+          <li><strong>ERGOSTEROL (o grande alvo dos antifúngicos!):</strong> enquanto a membrana das nossas células usa <em>colesterol</em>, a membrana do fungo usa <strong>ergosterol</strong>. A maioria dos remédios antifúngicos ataca justamente o ergosterol para "furar" o fungo sem destruir as células humanas!</li>
+          <li><strong>Cor da parede (Pigmentação):</strong> fungos <strong>Demáceos</strong> têm <strong>melanina</strong> (são escuros — a melanina funciona como um "protetor solar e escudo" contra raios UV e enzimas). Fungos <strong>Hialinos</strong> <strong>NÃO têm melanina</strong> (são claros/transparentes).</li>
+        </ul>
+
+        <div class="diagram-box">
+          <svg viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Estrutura da parede e membrana fúngica">
+            <rect x="8" y="8" width="724" height="144" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+            <text x="370" y="32" text-anchor="middle" font-size="13.5" font-weight="800" fill="#1f335c">Arquitetura Fúngica — Por que os Antifúngicos funcionam?</text>
+
+            <rect x="26" y="48" width="218" height="88" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="135" y="70" text-anchor="middle" font-size="12" font-weight="800" fill="#14532d">Parede Celular Fúngica</text>
+            <text x="135" y="90" text-anchor="middle" font-size="11" fill="#166534">• β-glucanos (β-1,3 e β-1,6)</text>
+            <text x="135" y="107" text-anchor="middle" font-size="11" fill="#166534">• Quitina e Manoproteínas</text>
+            <text x="135" y="124" text-anchor="middle" font-size="10.5" fill="#166534">(Estrutura microfibrilar insolúvel)</text>
+
+            <rect x="261" y="48" width="218" height="88" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+            <text x="370" y="70" text-anchor="middle" font-size="12" font-weight="800" fill="#78350f">ERGOSTEROL (Membrana)</text>
+            <text x="370" y="90" text-anchor="middle" font-size="11" fill="#92400e">Semelhante ao colesterol humano!</text>
+            <text x="370" y="108" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">🎯 PRINCIPAL ALVO</text>
+            <text x="370" y="124" text-anchor="middle" font-size="10.5" fill="#92400e">da maioria dos antifúngicos!</text>
+
+            <rect x="496" y="48" width="218" height="88" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+            <text x="605" y="70" text-anchor="middle" font-size="12" font-weight="800" fill="#581c87">Pigmentação da Parede</text>
+            <text x="605" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#581c87">• Demáceos: COM melanina</text>
+            <text x="605" y="106" text-anchor="middle" font-size="10.5" fill="#6b21a8">(protege contra UV e enzimas)</text>
+            <text x="605" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="#581c87">• Hialinos: SEM melanina</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3️⃣ Os 4 Níveis de Micoses (Da Pele até o Cérebro) &amp; Criptococose</h3>
+        <p>Pense nas micoses como uma escada de profundidade — começando bem na casquinha da pele até chegar aos órgãos internos:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tipo de Micose</th><th>Onde ataca / Como o fungo entra?</th><th>Exemplos Famosos &amp; Agentes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Superficiais e Dermatofitoses</strong></td>
+                <td>Ficam só por fora: <strong>camada córnea</strong> da pele, unhas e pelos. Os <strong>dermatófitos</strong> "comem" <strong>queratina</strong> (e invadem no formato de <strong>hifa</strong>).</td>
+                <td>• <strong>Tínea pedis</strong> (pé de atleta/frieira), <strong>Onicomicose</strong> (micose de unha), <strong>Tínea capitis</strong> (couro cabeludo), <strong>Tínea corporal</strong> e <strong>Pitiríase versicolor (pano branco)</strong>.<br>• Agentes: <em>Epidermophyton</em>, <em>Microsporum</em>, <em>Trichophyton</em>, <em>Malassezia furfur</em> e <em>Candida spp.</em></td>
+              </tr>
+              <tr>
+                <td><strong>2. Micoses de Implantação</strong></td>
+                <td>O fungo é "empurrado" para dentro por um <strong>machucado/traumatismo</strong> (espinho, farpa, arranhão de gato)! Atinge derme, subcutâneo, músculo e fáscia (pode subir pelos vasos linfáticos ou sangue).</td>
+                <td>• <strong>Esporotricose</strong> (<em>Sporothrix schenckii</em> / <em>S. brasiliensis</em>).</td>
+              </tr>
+              <tr>
+                <td><strong>3. Micoses Sistêmicas</strong></td>
+                <td>A pessoa <strong>respira (inala)</strong> os esporos/propágulos do fungo → faz uma lesão inicial no <strong>pulmão</strong> (que pode até regredir) e pode se espalhar pelo sangue para o resto do corpo.</td>
+                <td>• Coccidioidomicose, Blastomicose, Histoplasmose, Paracoccidioidomicose e <strong>Criptococose</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Micoses Oportunistas</strong></td>
+                <td>"Aproveitam a oportunidade" quando a defesa da pessoa está muito baixa (<strong>imunocomprometidos</strong>, como pacientes com HIV/AIDS, quimioterapia ou UTI).</td>
+                <td>• <strong>Criptococose</strong> (é sistêmica E oportunista!) e Candidíase em imunodeprimidos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout clinical">
+          <div class="callout-title">🕊️ FOCO ESPECIAL DE PROVA: Criptococose (A "Doença do Pombo" e do Eucalipto)</div>
+          • É uma micose <strong>oportunista e sistêmica</strong> (subaguda ou crônica) causada por uma levedura com <strong>cápsula protetora</strong> (<em>encapsulada</em>).<br>
+          • <strong>Caminho no corpo:</strong> a pessoa <strong>inala os esporos</strong> → eles pousam no <strong>pulmão</strong> → viajam até o <strong>Sistema Nervoso Central (SNC)</strong> → causam <strong>Meningite criptocócica</strong> (gravíssima e muito comum em pacientes imunocomprometidos!).<br>
+          • <strong>As 2 espécies que sempre caem na prova (não troque!):</strong>
+          <br>1. <strong><em>Cryptococcus neoformans</em>:</strong> encontrado no solo contaminado com <strong>fezes/excretas secas de pombos urbanos</strong> e outras aves.
+          <br>2. <strong><em>Cryptococcus gattii</em>:</strong> encontrado em <strong>eucaliptos</strong>, outras árvores e matéria vegetal em decomposição.
+        </div>
+      </div>
+
+      <div class="module-nav-footer">
+        <button class="action-btn" onclick="goTab('mod3')" type="button">← Anterior: Infecções Virais</button>
+        <button class="action-btn primary" onclick="goTab('turbo')" type="button">Ir para Revisão Turbo ⚡ →</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- REVISÃO TURBO: FLASHCARDS -->
+    <!-- ========================================================= -->
+    <section id="turbo" class="panel">
+      <div class="module-banner">
+        <div>
+          <span class="module-tag" style="background: var(--purple-bg); color: var(--purple);">⚡ Revisão de Véspera • Múltipla Escolha</span>
+          <h2>Revisão Turbo — 16 Pegadinhas de Prova (Múltipla Escolha)</h2>
+          <p>Teste rápido em múltipla escolha (A–D) com os pontos que mais caem em prova. Quer ainda mais questões? Abra também a aba <strong>📝 Simulado</strong>!</p>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+          <span id="turboScoreBadge" style="font-size:0.84rem; font-weight:800; color:var(--purple);">Acertos Turbo: 0/0 (0/16)</span>
+          <button class="action-btn" id="resetTurboBtn" type="button">↺ Refazer Revisão Turbo</button>
+        </div>
+      </div>
+
+      <div class="flashcard-grid" id="flashcardGrid"></div>
+
+      <div class="module-nav-footer">
+        <button class="action-btn" onclick="goTab('mod4')" type="button">← Voltar aos Resumos</button>
+        <button class="action-btn primary" onclick="goTab('quiz')" type="button">Ir para o Simulado (28 Questões) 📝 →</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SIMULADO: 28 QUESTÕES -->
+    <!-- ========================================================= -->
+    <section id="quiz" class="panel">
+      <div class="quiz-dashboard">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+          <div>
+            <span class="module-tag" style="background: var(--terra-bg); color: var(--terra);">📝 Treino de Prova</span>
+            <h2 style="margin:4px 0 4px; font-size:1.45rem;">Simulado Completo de Microbiologia (28 Questões)</h2>
+            <p style="margin:0; color:var(--text-muted); font-size:0.9rem;">7 questões inéditas por módulo com gabarito comentado imediato para você fixar cada detalhe.</p>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="action-btn" id="btnOnlyWrong" type="button">🎯 Refazer Erradas</button>
+            <button class="action-btn" id="btnShuffle" type="button">🔀 Embaralhar</button>
+            <button class="action-btn primary" id="btnResetQuiz" type="button">↺ Reiniciar Simulado</button>
+          </div>
+        </div>
+
+        <div class="quiz-stats">
+          <div class="stat-box">
+            <div class="stat-val" id="statAnswered">0 / 28</div>
+            <div class="stat-lbl">Respondidas</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="statCorrect" style="color: var(--sage);">0</div>
+            <div class="stat-lbl">Acertos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="statWrong" style="color: var(--danger);">0</div>
+            <div class="stat-lbl">Erros</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="statPct">0%</div>
+            <div class="stat-lbl">Aproveitamento</div>
+          </div>
+        </div>
+
+        <div class="quiz-controls">
+          <div class="filter-pills" id="quizFilterPills">
+            <button class="pill active" data-filter="all" type="button">Todos (28)</button>
+            <button class="pill" data-filter="mod1" type="button">1. Micobactérias (7)</button>
+            <button class="pill" data-filter="mod2" type="button">2. Virologia (7)</button>
+            <button class="pill" data-filter="mod3" type="button">3. Viroses (7)</button>
+            <button class="pill" data-filter="mod4" type="button">4. Micologia (7)</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="quizContainer"></div>
+    </section>
+  </main>
+
+  <script>
+    // =========================================================================
+    // FLASHCARDS (16 high-yield Microbiology traps)
+    // =========================================================================
+    const FLASHCARDS = [
+      {
+            "mod": "1. Micobactérias",
+            "q": "O que compõe o 'Fator Corda' no Mycobacterium tuberculosis e por que sua parede dificulta a entrada de antibióticos?",
+            "options": [
+                  "Cápsula espessa e LPS externo.",
+                  "Ácidos micólicos (camada cerosa resistente à água que dificulta antibióticos) + micosídeos formando o Fator Corda; além disso, NÃO possuem cápsula nem adesinas.",
+                  "Ergosterol e quitina na parede celular.",
+                  "Esporos bacterianos de crescimento ultrarrápido."
+            ],
+            "correct": 1,
+            "a": "A parede troca o LPS externo por ÁCIDOS MICÓLICOS (camada cerosa resistente à água que dificulta a entrada de antibióticos). Ácidos micólicos + micosídeos formam o Fator Corda (alinhamento paralelo em fileiras, fator de virulência). E lembre: NÃO possuem cápsula nem adesinas!"
+      },
+      {
+            "mod": "1. Micobactérias",
+            "q": "Um Teste de Mantoux (PPD) reator forte (≥ 10 mm) confirma sozinho tuberculose doença ativa?",
+            "options": [
+                  "Sim, dispensa Raio-X e baciloscopia.",
+                  "Não! O Teste de Mantoux (leitura em 48–72h) indica apenas CONTATO PRÉVIO com o bacilo, não doença ativa.",
+                  "Sim, mas somente se lido em 10 minutos.",
+                  "Não, porque o PPD detecta apenas vírus da gripe."
+            ],
+            "correct": 1,
+            "a": "NÃO! O Teste de Mantoux (0,5 mL intradérmico, leitura em 48–72h: 0–4 mm não-reator; 5–9 mm fraco; ≥ 10 mm forte) NÃO indica doença — indica apenas CONTATO PRÉVIO com o bacilo!"
+      },
+      {
+            "mod": "1. Micobactérias",
+            "q": "Qual a coloração usada na baciloscopia (BAAR) e qual o meio de cultura clássico da tuberculose?",
+            "options": [
+                  "Coloração de Gram e Ágar Sangue (24h).",
+                  "Coloração de Ziehl-Neelsen (bacilos avermelhados) e Ágar Löwenstein-Jensen (LJ, crescimento lento de 3 a 8 semanas).",
+                  "KOH 20% e Ágar Sabouraud.",
+                  "Giemsa e Ágar MacConkey."
+            ],
+            "correct": 1,
+            "a": "Baciloscopia (BAAR): coloração de ZIEHL-NEELSEN (bacilos avermelhados). Cultura: Ágar LÖWENSTEIN-JENSEN (LJ), com crescimento lento de 3 a 8 semanas."
+      },
+      {
+            "mod": "1. Micobactérias",
+            "q": "Do que é feita a vacina BCG e contra quais formas de tuberculose ela protege?",
+            "options": [
+                  "M. tuberculosis morto; protege apenas contra tosse leve.",
+                  "Mycobacterium bovis atenuados (dose única intradérmica, braço direito ao nascer); protege contra as formas graves: tuberculose miliar e tuberculose meníngea.",
+                  "Toxina purificada; aplicada via oral aos 4 anos.",
+                  "M. leprae inativado; protege contra hanseníase apenas."
+            ],
+            "correct": 1,
+            "a": "Feita de Mycobacterium bovis atenuados (dose única, intradérmica, braço direito ao nascer; SUS desde 1976). Protege contra as FORMAS GRAVES: tuberculose miliar e tuberculose meníngea!"
+      },
+      {
+            "mod": "2. Virologia",
+            "q": "Um vírus pode ter DNA e RNA simultaneamente? E qual a origem do envelope viral?",
+            "options": [
+                  "Sim, todos têm DNA e RNA; envelope vem de ribossomos virais.",
+                  "Não! Possuem apenas UM tipo de ácido nucleico (DNA ou RNA); o envelope lipídico deriva da membrana citoplasmática da célula hospedeira na saída (exocitose/brotamento).",
+                  "Não, mas o envelope é feito exclusivamente de quitina.",
+                  "Sim, mas apenas nos vírus nus."
+            ],
+            "correct": 1,
+            "a": "NÃO! Os vírus possuem UM ÚNICO tipo de ácido nucleico (DNA OU RNA). O envelope lipídico é derivado de uma porção da membrana citoplasmática da célula hospedeira quando o vírus sai (exocitose/brotamento)."
+      },
+      {
+            "mod": "2. Virologia",
+            "q": "Qual o diferencial replicativo dos vírus ssRNA negativo (antissenso, ex.: Rhabdoviridae)?",
+            "options": [
+                  "Não precisam de RNA polimerase dependente de RNA.",
+                  "Precisam primeiro transcrever uma fita positiva (mRNA) a partir do genoma negativo antes de sintetizar proteínas virais.",
+                  "Convertem RNA diretamente em proteínas sem formar fita positiva.",
+                  "Replicam-se exclusivamente por fissão binária fora da célula."
+            ],
+            "correct": 1,
+            "a": "Ambos usam RNA polimerase dependente de RNA viral. No ssRNA- (antissenso, ex.: Rhabdoviridae), uma fita positiva (mRNA) precisa ser previamente transcrita a partir do genoma negativo antes de sintetizar proteínas!"
+      },
+      {
+            "mod": "2. Virologia",
+            "q": "Quais são as 3 enzimas essenciais trazidas por um Retrovírus (ex.: HIV) e o que é o Provírus?",
+            "options": [
+                  "DNA girase, catalase e lipoxigenase.",
+                  "Transcriptase reversa (RNA→DNA), Integrase (insere DNA no cromossomo formando o PROVÍRUS) e Protease (processa proteínas virais).",
+                  "Apenas fosfolipase A2 e RNA polimerase celular.",
+                  "Transcriptase reversa apenas; retrovírus nunca integram seu DNA ao cromossomo."
+            ],
+            "correct": 1,
+            "a": "1) Transcriptase reversa (copia RNA viral → DNA dupla fita); 2) Integrase (insere o DNA viral no cromossomo da célula hospedeira formando o PROVÍRUS, que pode ficar latente!); 3) Protease (processa proteínas virais)."
+      },
+      {
+            "mod": "2. Virologia",
+            "q": "Qual vírus de Hepatite depende de coinfecção com o vírus da Hepatite B (Hepadnaviridae)?",
+            "options": [
+                  "Hepatite A (Picornaviridae).",
+                  "Hepatite C (Flaviviridae).",
+                  "Hepatite D (Deltaviridae).",
+                  "Hepatite E (Caliciviridae)."
+            ],
+            "correct": 2,
+            "a": "HEPATITE D (Deltaviridae)! E curiosidade de prova da tabela: o vírus da Hepatite B (DNA dupla fita envelopado) também usa transcriptase reversa para produzir seu DNA a partir de um mRNA!"
+      },
+      {
+            "mod": "3. Viroses",
+            "q": "Qual é a diferença correta entre uma pessoa soropositiva (HIV+) e um paciente com AIDS?",
+            "options": [
+                  "Soropositivo assintomático não consegue transmitir o HIV.",
+                  "Soropositivo (HIV+) tem o vírus latente nos linfócitos T CD4 (ciclo lisogênico, até ~10 anos sem sintomas), MAS JÁ TRANSMITE; na AIDS há ativação (ciclo lítico), destruição de T CD4 e doenças oportunistas.",
+                  "Todo portador de HIV desenvolve AIDS nas primeiras 48 horas.",
+                  "A AIDS é causada por bactérias oportunistas que geram o HIV."
+            ],
+            "correct": 1,
+            "a": "Soropositivo (HIV+) possui o vírus, mas está sem sintomas porque o HIV permanece latente no cromossomo dos linfócitos T CD4 (ciclo lisogênico, por até ~10 anos) — MAS JÁ PODE TRANSMITIR! Na AIDS, o vírus entra no ciclo lítico, destrói T CD4 e surgem sintomas + doenças oportunistas."
+      },
+      {
+            "mod": "3. Viroses",
+            "q": "Qual alternativa compara corretamente as Hepatites A, B e C?",
+            "options": [
+                  "Hepatite A = sangue/sexo; Hepatites B e C = água contaminada.",
+                  "Hepatite A = fecal-oral (água/alimentos → saneamento básico); Hepatites B e C = sangue/sexo/seringas (Hep B tem vacina; Hep C não tratada pode evoluir para cirrose).",
+                  "Nenhuma hepatite viral tem vacina disponível.",
+                  "Apenas a Hepatite C é transmitida por água contaminada."
+            ],
+            "correct": 1,
+            "a": "Hepatite A: fecal-oral (água/alimentos contaminados) → saneamento básico. Hepatites B e C: sangue/sexo/seringas/transfusão → preservativos, bancos de sangue; Hepatite B tem VACINA e Hepatite C não tratada pode evoluir para CIRROSE!"
+      },
+      {
+            "mod": "3. Viroses",
+            "q": "Sobre Tríplice Viral, Rubéola na gestação e Dengue, qual alternativa está 100% CORRETA?",
+            "options": [
+                  "Tríplice Viral previne Dengue, Raiva e Pólio; aspirina é recomendada na dengue.",
+                  "Tríplice Viral previne Sarampo, Caxumba e Rubéola; Rubéola na gravidez pode causar cegueira, surdez e retardo mental no feto; na Dengue a ASPIRINA é contraindicada.",
+                  "Rubéola nunca atravessa a placenta.",
+                  "Tetraviral não inclui proteção contra varicela (catapora)."
+            ],
+            "correct": 1,
+            "a": "Tríplice Viral: Sarampo, Caxumba e Rubéola (Tetraviral inclui Varicela/Catapora). A Rubéola na gravidez atravessa a placenta e causa cegueira, surdez e retardo mental. Na Dengue, ASPIRINA é contraindicada por interferir na coagulação!"
+      },
+      {
+            "mod": "3. Viroses",
+            "q": "Qual é o esquema vacinal da Poliomielite (VIP/VOP) e quais os principais transmissores da Raiva urbana e rural?",
+            "options": [
+                  "VOP aos 2, 4 e 6 meses e VIP aos 15 meses; Raiva rural = mosquitos.",
+                  "VIP (injetável) aos 2, 4 e 6 meses + reforços com VOP (gotinha) aos 15 meses e 4 anos; Raiva: urbano = cães/gatos, rural = morcegos hematófagos.",
+                  "Poliomielite nunca foi erradicada no Brasil e não tem vacina.",
+                  "Raiva tem cura simples após a hidrofobia."
+            ],
+            "correct": 1,
+            "a": "Pólio (erradicada no Brasil desde 1989): VIP (inativada/injetável) aos 2, 4 e 6 meses + VOP (oral/gotinha) nos reforços de 15 meses e 4 anos. Raiva: urbano = cães e gatos; rural = morcegos hematófagos (causa encefalite e hidrofobia)."
+      },
+      {
+            "mod": "4. Micologia",
+            "q": "Qual alternativa diferencia corretamente Hifa septada, Hifa cenocítica, Pseudo-hifa e Conídeo?",
+            "options": [
+                  "Cenocítica = tem septos; Conídeo = exclusivamente sexuado.",
+                  "Septada = tem paredes cruzadas; Cenocítica = contínua sem septos; Pseudo-hifa = cadeia de brotos de levedura; Conídeo = esporo formado exclusivamente por reprodução assexuada (mitose).",
+                  "Pseudo-hifa é exclusiva de micobactérias.",
+                  "Esporo e conídeo são exatamente a mesma coisa, ambos apenas sexuados."
+            ],
+            "correct": 1,
+            "a": "Septada = tem paredes cruzadas (septos); Cenocítica = longa e contínua sem septos; Pseudo-hifa = brotos de leveduras que não se separam formando cadeia. Esporo = unidade reprodutiva sexuada ou assexuada; Conídeo = exclusivamente assexuado (por mitose)."
+      },
+      {
+            "mod": "4. Micologia",
+            "q": "Como funciona o Dimorfismo Fúngico dependente de temperatura?",
+            "options": [
+                  "25 °C = levedura; 37 °C = filamentoso.",
+                  "25 °C (ambiente) = FILAMENTOSO; 37 °C (corpo humano) = LEVEDURA (ex.: Paracoccidioides, Histoplasma, Sporothrix brasiliensis).",
+                  "O fungo alterna entre bactéria e vírus conforme o pH.",
+                  "Ocorre exclusivamente em dermatófitos superficiais."
+            ],
+            "correct": 1,
+            "a": "A 25 °C (ambiente) o fungo cresce como FILAMENTOSO; a 37 °C (corpo humano) cresce como LEVEDURA! Exemplos: Coccidioides immitis, Paracoccidioides brasiliensis, Blastomyces dermatitidis, Histoplasma capsulatum e Sporothrix brasiliensis."
+      },
+      {
+            "mod": "4. Micologia",
+            "q": "Qual é o principal alvo da maioria dos antifúngicos e o que diferencia fungos Demáceos de Hialinos?",
+            "options": [
+                  "Alvo = ácidos micólicos; Demáceos = sem melanina.",
+                  "Alvo = ERGOSTEROL (análogo ao colesterol humano); Demáceos possuem MELANINA na parede (protege contra UV e enzimas líticas) e Hialinos não possuem melanina.",
+                  "Alvo = colesterol humano; Hialinos possuem melanina escura.",
+                  "Alvo = ribossomos bacterianos."
+            ],
+            "correct": 1,
+            "a": "O ERGOSTEROL (análogo ao colesterol humano) é o principal alvo da maioria dos antifúngicos (a parede também tem β-glucanos e quitina). Demáceos possuem MELANINA na parede (protege contra UV e enzimas líticas); Hialinos não possuem melanina."
+      },
+      {
+            "mod": "4. Micologia",
+            "q": "Diferencie Cryptococcus neoformans de Cryptococcus gattii e aponte o principal alvo na criptococose:",
+            "options": [
+                  "C. neoformans = eucaliptos; C. gattii = fezes de pombos; acomete apenas unhas.",
+                  "C. neoformans = solo com fezes de pombos urbanos/aves; C. gattii = eucaliptos/árvores e matéria vegetal em decomposição; inalados, acometem frequentemente o SNC (meningite criptocócica em imunocomprometidos).",
+                  "Ambos são transmitidos por traumatismo com espinho e nunca atingem o SNC.",
+                  "Ambos são fungos exclusivamente filamentosos sem cápsula."
+            ],
+            "correct": 1,
+            "a": "C. neoformans = solo com fezes de pombos urbanos/aves. C. gattii = eucaliptos, árvores e matéria vegetal em decomposição. Ambos são inalados (pulmão) e acometem com frequência o SNC → meningite criptocócica em imunocomprometidos!"
+      }
+];
+
+    // =========================================================================
+    // QUIZ QUESTIONS (28 questions — 7 per module)
+    // =========================================================================
+    const QUESTIONS = [
+      // --- MÓDULO 1: MICOBACTÉRIAS (TUBERCULOSE) ---
+      {
+        id: 1, mod: "mod1", modLabel: "1. Micobactérias", diff: "Fácil",
+        stem: "Sobre as características biológicas e estruturais das micobactérias (como Mycobacterium tuberculosis), assinale a alternativa CORRETA:",
+        options: [
+          "São bacilos anaeróbios estritos, formadores de esporos e de crescimento muito rápido em laboratório.",
+          "Possuem cápsula espessa e abundantes adesinas para se fixar aos alvéolos.",
+          "São bacilos aeróbios, não formadores de esporos, de crescimento lento, cuja parede contém ácidos micólicos (camada cerosa que dificulta a entrada de antibióticos) e forma o fator corda nas cepas virulentas.",
+          "O prefixo 'myco' significa que pertencem ao Reino Fungi e possuem ergosterol na membrana.",
+          "São cocos Gram-positivos que não causam doenças relevantes em humanos."
+        ],
+        correct: 2,
+        explain: "Micobactérias são bacilos aeróbios, não esporulados, sem cápsula e sem adesinas, de crescimento lento. Seus ácidos micólicos formam uma camada cerosa impermeável (dificulta entrada de antibióticos) e, junto aos micosídeos, formam o fator corda (virulência)."
+      },
+      {
+        id: 2, mod: "mod1", modLabel: "1. Micobactérias", diff: "Média",
+        stem: "Na patogênese da tuberculose pulmonar, qual é o papel do granuloma formado ao redor dos bacilos inalados?",
+        options: [
+          "Acelerar a disseminação imediata do bacilo para o sistema nervoso central em 100% dos infectados.",
+          "Envolver o foco inflamatório (com necrose caseosa central, macrófagos, linfócitos e fibrina), contendo a multiplicação bacilar em cerca de 90% dos casos.",
+          "Substituir a membrana alveolar por tecido muscular liso.",
+          "Produzir anticorpos que eliminam o bacilo em menos de 1 hora sem resposta celular.",
+          "Impedir o aparecimento de qualquer alteração no exame de Raio-X de tórax."
+        ],
+        correct: 1,
+        explain: "O granuloma (com necrose caseosa no centro, células imunes e fibrina ao redor) atua contendo a multiplicação bacilar em aproximadamente 90% das pessoas infectadas!"
+      },
+      {
+        id: 3, mod: "mod1", modLabel: "1. Micobactérias", diff: "Média",
+        stem: "Um paciente assintomático realiza o Teste de Mantoux (PPD) e, após 72 horas, apresenta uma pápula de 12 mm de diâmetro. De acordo com a aula de Micobactérias, a interpretação CORRETA desse resultado é:",
+        options: [
+          "Não-reator, descartando qualquer contato prévio com o bacilo.",
+          "Reator fraco, exigindo repetição imediata em 2 horas.",
+          "Reator forte (≥ 10 mm), indicando contato prévio com o bacilo — porém o teste isoladamente NÃO indica doença ativa.",
+          "Diagnóstico definitivo de tuberculose ativa contagiosa, dispensando avaliação clínica, Raio-X e baciloscopia.",
+          "Indicação de que o paciente nunca recebeu a vacina BCG."
+        ],
+        correct: 2,
+        explain: "Leitura do PPD em 48–72h: 0–4 mm = não-reator; 5–9 mm = reator fraco; ≥ 10 mm = reator forte. Atenção à pegadinha clássica: o Teste de Mantoux indica CONTATO PRÉVIO com o bacilo, e NÃO confirma doença ativa!"
+      },
+      {
+        id: 4, mod: "mod1", modLabel: "1. Micobactérias", diff: "Fácil",
+        stem: "Qual combinação apresenta CORRETAMENTE a coloração utilizada na baciloscopia (BAAR) e o meio de cultura clássico para Mycobacterium tuberculosis?",
+        options: [
+          "Coloração de Gram (bacilos roxos) e Ágar Sangue (crescimento em 24 horas).",
+          "Coloração de Ziehl-Neelsen (bacilos avermelhados) e Ágar Löwenstein-Jensen (LJ), com crescimento lento entre 3 e 8 semanas.",
+          "Coloração com KOH 20% e Ágar Sabouraud (crescimento em 12 horas).",
+          "Coloração de Giemsa e caldo nutritivo (crescimento em 48 horas).",
+          "Coloração de Ziehl-Neelsen (bacilos azuis) e Ágar MacConkey."
+        ],
+        correct: 1,
+        explain: "Na baciloscopia para BAAR usa-se a coloração de Ziehl-Neelsen (bacilos avermelhados). A cultura clássica é feita no Ágar Löwenstein-Jensen (LJ), onde o crescimento é lento: 3 a 8 semanas!"
+      },
+      {
+        id: 5, mod: "mod1", modLabel: "1. Micobactérias", diff: "Fácil",
+        stem: "Sobre a vacina BCG no Brasil, assinale a alternativa CORRETA:",
+        options: [
+          "É composta por vírus inativados da gripe e aplicada por via oral aos 15 meses.",
+          "É composta por Mycobacterium bovis atenuados, aplicada em dose única intradérmica no braço direito ao nascimento, protegendo contra as formas graves (tuberculose miliar e tuberculose meníngea).",
+          "Impede 100% de todas as infecções pulmonares leves por M. tuberculosis ao longo de toda a vida adulta.",
+          "Foi suspensa do SUS em 1976 por falta de eficácia.",
+          "É administrada exclusivamente em adultos maiores de 60 anos."
+        ],
+        correct: 1,
+        explain: "BCG (Bacilo Calmette-Guérin) = M. bovis atenuados; obrigatória no SUS desde 1976; dose única intradérmica no braço direito ao nascer; protege contra as formas graves: TB miliar e TB meníngea!"
+      },
+      {
+        id: 6, mod: "mod1", modLabel: "1. Micobactérias", diff: "Média",
+        stem: "Sobre a epidemiologia da tuberculose no Brasil e o Tratamento Diretamente Observado (TDO), assinale a alternativa CORRETA:",
+        options: [
+          "A tuberculose é a 1ª causa de morte em pacientes com AIDS, e grupos como moradores de rua (67×), HIV+ (35×) e população carcerária (28×) apresentam risco muito elevado; o TDO visa reduzir a taxa de abandono do tratamento.",
+          "O TDO significa que o paciente escolhe livremente quando tomar ou interromper os antibióticos em casa sem acompanhamento.",
+          "A tosse da tuberculose dura no máximo 2 dias e nunca se acompanha de suores noturnos ou perda de peso.",
+          "Os granulomas pulmonares no Raio-X aparecem exclusivamente na base inferior dos pulmões.",
+          "Profissionais de saúde não fazem parte dos grupos de risco para tuberculose."
+        ],
+        correct: 0,
+        explain: "Dados exatos da aula: TB é a 1ª causa de morte em pacientes com AIDS e 2ª por doenças infecciosas (85.697 casos novos em 2024); riscos: moradores de rua 67×, HIV+ 35×, carcerária 28×, indígenas 3×. O TDO consiste na entrega, observação e registro de cada dose por uma segunda pessoa para reduzir o abandono!"
+      },
+      {
+        id: 7, mod: "mod1", modLabel: "1. Micobactérias", diff: "Difícil",
+        stem: "De acordo com o mecanismo de ação dos medicamentos antituberculose (esquema RIPE) mostrado na aula, qual associação está CORRETA?",
+        options: [
+          "Rifampicina inibe a síntese da parede celular; Isoniazida inibe a RNA polimerase.",
+          "Isoniazida e Etambutol inibem a síntese da parede celular (ácidos micólicos / arabinogalactana); Rifampicina inibe a síntese de RNA (RNA polimerase); Pirazinamida perturba a membrana plasmática e o metabolismo energético.",
+          "Todos os quatro medicamentos agem exclusivamente destruindo a cápsula polissacarídica da micobactéria.",
+          "A Estreptomicina foi substituída pelo ergosterol em 1946.",
+          "Nenhum fármaco do esquema atua sobre a parede celular micobacteriana."
+        ],
+        correct: 1,
+        explain: "Conforme o diagrama do esquema RIPE: Isoniazida (ácidos micólicos) e Etambutol (arabinogalactana) inibem a síntese da parede celular; Rifampicina bloqueia a RNA polimerase (síntese de RNA); e Pirazinamida perturba a membrana plasmática e a síntese de ATP/metabolismo energético."
+      },
+
+      // --- MÓDULO 2: INTRODUÇÃO À VIROLOGIA ---
+      {
+        id: 8, mod: "mod2", modLabel: "2. Virologia", diff: "Fácil",
+        stem: "Sobre as propriedades gerais e a estrutura dos vírus, assinale a alternativa CORRETA:",
+        options: [
+          "São organismos unicelulares com metabolismo próprio e ribossomos independentes.",
+          "Possuem simultaneamente DNA e RNA dentro do mesmo vírion.",
+          "São agentes acelulares, parasitas intracelulares obrigatórios, possuem apenas um tipo de ácido nucleico (DNA ou RNA) protegido por um capsídeo proteico e podem ou não apresentar envelope lipídico derivado da membrana da célula hospedeira.",
+          "Infectam exclusivamente células animais humanas, não sendo capazes de infectar bactérias ou plantas.",
+          "O primeiro vírus isolado em 1935 por Wendell Stanley foi o HIV."
+        ],
+        correct: 2,
+        explain: "Vírus são acelulares, sem metabolismo próprio, parasitas intracelulares obrigatórios, têm DNA OU RNA (nunca ambos), capsídeo proteico e envelope opcional (vindo da membrana da célula hospedeira). O 1º isolado foi o Tobamovirus (Mosaico do Tabaco) em 1935 por Wendell Stanley."
+      },
+      {
+        id: 9, mod: "mod2", modLabel: "2. Virologia", diff: "Média",
+        stem: "Em relação às etapas da biossíntese viral, qual sequência descreve corretamente a infecção da célula hospedeira?",
+        options: [
+          "Liberação → Desnudamento → Adsorção → Biossíntese → Penetração.",
+          "Adsorção (ligação a receptores) → Fusão/Endocitose (envelopados) e Penetração → Desnudamento (liberação do material genético) → Biossíntese → Maturação → Liberação.",
+          "Desnudamento → Adsorção → Penetração → Liberação → Biossíntese.",
+          "Biossíntese → Adsorção → Maturação → Desnudamento.",
+          "Fusão ocorre exclusivamente em vírus não envelopados (nus)."
+        ],
+        correct: 1,
+        explain: "Ordem correta: 1. Adsorção → 2. Fusão/Endocitose (envelope lipídico apenas em envelopados) e Penetração do capsídeo → 3. Desnudamento (libera genoma) → 4. Biossíntese → 5. Maturação → 6. Liberação."
+      },
+      {
+        id: 10, mod: "mod2", modLabel: "2. Virologia", diff: "Média",
+        stem: "O que define um 'vírion' e o que diferencia um vírus envelopado de um vírus 'nu'?",
+        options: [
+          "Vírion é uma bactéria infectada por fungo; vírus nu é o que não possui ácido nucleico.",
+          "Vírion é a partícula viral completa (ácido nucleico + capsídeo proteico) que serve de veículo de transmissão; vírus envelopados têm o capsídeo coberto por envelope lipídico da membrana celular, enquanto vírus não envelopados não possuem esse envelope e são chamados de nus.",
+          "Vírus nu não possui capsídeo proteico, sendo apenas DNA livre.",
+          "O envelope lipídico é fabricado exclusivamente por mitocôndrias próprias do vírus.",
+          "Apenas vírus helicoidais podem ser chamados de vírions."
+        ],
+        correct: 1,
+        explain: "Vírion = partícula viral completa (genoma + capsídeo). Vírus envelopado = capsídeo revestido por envelope lipídico adquirido da membrana da célula hospedeira; não envelopado = vírus nu (sem envelope, mas COM capsídeo!)."
+      },
+      {
+        id: 11, mod: "mod2", modLabel: "2. Virologia", diff: "Difícil",
+        stem: "No ciclo de multiplicação dos Retrovírus (como o HIV), qual é a função sequencial das enzimas Transcriptase Reversa, Integrase e Protease?",
+        options: [
+          "Transcriptase reversa degrada o DNA humano; Integrase cria o envelope lipídico; Protease copia RNA em DNA.",
+          "Transcriptase reversa copia o RNA viral em DNA de dupla fita; Integrase integra esse DNA ao cromossomo da célula hospedeira (formando o provírus); Protease processa as proteínas virais sintetizadas antes da liberação por brotamento.",
+          "Integrase replica o RNA diretamente no citoplasma sem formar DNA; Protease faz a adsorção viral.",
+          "Retrovírus são vírus de DNA dupla fita que não utilizam transcriptase reversa.",
+          "O provírus é imediatamente destruído pelo núcleo, impedindo qualquer estado de latência."
+        ],
+        correct: 1,
+        explain: "Ciclo clássico dos Retrovírus: 1) Transcriptase reversa (RNA → DNA dupla fita); 2) Integrase (insere DNA no cromossomo celular = PROVÍRUS, podendo ficar latente); 3) Transcrição/tradução + Protease processa as proteínas virais → brotamento levando envelope e espículas!"
+      },
+      {
+        id: 12, mod: "mod2", modLabel: "2. Virologia", diff: "Média",
+        stem: "Comparando os vírus de RNA de fita simples positiva (ssRNA+, senso) e negativa (ssRNA−, antissenso), assinale a alternativa CORRETA:",
+        options: [
+          "Os vírus ssRNA− (ex.: Rhabdoviridae) precisam primeiro transcrever uma fita positiva (mRNA) a partir do seu genoma negativo antes de iniciar a síntese de proteínas.",
+          "Vírus de RNA não utilizam RNA polimerase dependente de RNA.",
+          "Vírus de RNA replicam-se exclusivamente dentro de bactérias.",
+          "Picornaviridae é um exemplo de vírus de DNA dupla fita envelopado.",
+          "Reoviridae possui apenas uma fita simples de DNA."
+        ],
+        correct: 0,
+        explain: "Nos vírus ssRNA− (antissenso, como Rhabdoviridae), a fita positiva (mRNA) precisa ser previamente transcrita pela RNA polimerase dependente de RNA viral antes da tradução das proteínas! Picornaviridae = ssRNA+ não envelopado; Reoviridae = dsRNA (dupla fita) não envelopado."
+      },
+      {
+        id: 13, mod: "mod2", modLabel: "2. Virologia", diff: "Difícil",
+        stem: "Consultando a classificação das famílias virais que afetam a saúde humana vista em aula, assinale a associação INCORRETA:",
+        options: [
+          "Herpesviridae (DNA dupla fita envelopado): herpes labial/genital, catapora, herpes zóster e mononucleose.",
+          "Flaviviridae (RNA+ fita simples envelopado): dengue, febre amarela e hepatite C.",
+          "Rhabdoviridae (RNA− fita única, em forma de projétil): vírus da raiva (Lyssavirus).",
+          "Deltaviridae (Hepatite D): depende de coinfecção com hepadnavírus (Hepatite B).",
+          "Orthomyxoviridae (Influenza A, B e C): vírus de DNA dupla fita não envelopado."
+        ],
+        correct: 4,
+        explain: "A alternativa E está INCORRETA! Orthomyxoviridae (Influenza A, B e C) são vírus de RNA de fita simples NEGATIVA, SEGMENTADO e ENVELOPADO (com espículas que aglutinam hemácias)!"
+      },
+      {
+        id: 14, mod: "mod2", modLabel: "2. Virologia", diff: "Fácil",
+        stem: "Além de causarem doenças, os vírus desempenham papéis importantes na natureza. Qual alternativa lista CORRETAMENTE funções ecológicas dos vírus apresentadas na aula?",
+        options: [
+          "São as entidades biológicas mais raras do planeta e não interferem na evolução.",
+          "São a entidade biológica mais abundante do planeta, atuam como importantes agentes de evolução (carreando genes entre espécies), regulam populações hospedeiras e participam da proteção da microbiota.",
+          "Realizam fotossíntese para produzir oxigênio atmosférico.",
+          "Degradam rochas diretamente através de seus próprios ribossomos.",
+          "Existem apenas em ambientes hospitalares."
+        ],
+        correct: 1,
+        explain: "Slide 4 de Introdução à Virologia: os vírus são a entidade biológica mais abundante do planeta, principais agentes de evolução por transferirem genes entre espécies, regulam populações hospedeiras e protegem a microbiota!"
+      },
+
+      // --- MÓDULO 3: INFECÇÕES VIRAIS ---
+      {
+        id: 15, mod: "mod3", modLabel: "3. Viroses", diff: "Média",
+        stem: "Sobre a infecção pelo HIV e a diferença entre ser soropositivo e ter AIDS, assinale a alternativa CORRETA:",
+        options: [
+          "Todo indivíduo HIV positivo (soropositivo) já apresenta sintomas de AIDS imediatamente após o contágio.",
+          "O HIV infecta linfócitos T CD4 e pode permanecer latente (ciclo lisogênico) no cromossomo dessas células por cerca de 10 anos sem sintomas; nesse período a pessoa soropositiva PODE transmitir o vírus, e a AIDS manifesta-se quando ocorre ativação (ciclo lítico) e surgimento de doenças oportunistas.",
+          "A pessoa soropositiva assintomática não transmite o vírus HIV.",
+          "A maioria dos pacientes com AIDS morre diretamente pela febre causada pelo HIV, e não por doenças oportunistas.",
+          "O leite materno não transmite o HIV, sendo sempre liberada a amamentação por mães soropositivas."
+        ],
+        correct: 1,
+        explain: "Ponto fundamental de prova! HIV+ (soropositivo) pode ficar ~10 anos sem sintomas (latência/ciclo lisogênico nos T CD4), MAS JÁ TRANSMITE! Quando entra em ciclo lítico, destrói T CD4 e surgem doenças oportunistas (tuberculose, candidíase, câncer, pneumonia). Mães soropositivas devem evitar a amamentação."
+      },
+      {
+        id: 16, mod: "mod3", modLabel: "3. Viroses", diff: "Fácil",
+        stem: "Compare as Hepatites virais A, B e C quanto à transmissão, complicações e prevenção. Assinale a alternativa CORRETA:",
+        options: [
+          "A Hepatite A é transmitida por água e alimentos contaminados (profilaxia: saneamento básico), enquanto as Hepatites B e C são transmitidas por contato com sangue/sexo/seringas; há vacina contra a Hepatite B, e a Hepatite C sem tratamento pode evoluir para cirrose.",
+          "As Hepatites A, B e C são todas transmitidas exclusivamente pela picada do mosquito Aedes aegypti.",
+          "Não existe vacina contra a Hepatite B, apenas contra a Hepatite C.",
+          "A Hepatite A é a única que causa icterícia (pele e olhos amarelados).",
+          "O compartilhamento de seringas transmite apenas a Hepatite A."
+        ],
+        correct: 0,
+        explain: "Hepatite A = fecal-oral (água/alimentos → saneamento básico; geralmente eliminada pelo sistema imune). Hepatites B e C = sangue/sexo/seringas/transfusão; existe vacina para Hepatite B, antivirais para Hepatite C (que sem tratamento rápido pode evoluir para cirrose)."
+      },
+      {
+        id: 17, mod: "mod3", modLabel: "3. Viroses", diff: "Média",
+        stem: "Sobre o Herpes Bucal (HSV-1), o Herpes Genital (HSV-2) e o HPV, assinale a alternativa CORRETA:",
+        options: [
+          "O Herpes Bucal acomete menos de 1% da população mundial e nunca fica assintomático.",
+          "O HPV é transmitido por água contaminada e não tem relação com câncer.",
+          "No Herpes Bucal (~90% da população, maioria assintomática), surtos podem surgir com estresse, disfunção hormonal ou sol excessivo; no Herpes Genital avançado a camisinha é pouco eficiente (exigindo abstinência nas crises); e o HPV causa verrugas e lesões precursoras de câncer de colo uterino (prevenção: Papanicolau e vacina no SUS de 9 a 14 anos).",
+          "A vacina do HPV no SUS é aplicada apenas em idosos acima de 70 anos.",
+          "O HPV nunca apresenta período de latência no organismo."
+        ],
+        correct: 2,
+        explain: "Todas as informações batem com os slides de Aula 6: HSV-1 (~90%, gatilhos: estresse/hormônio/sol); HSV-2 (estágio avançado reduz eficácia do preservativo → abstinência nas crises); HPV (sexual, latência por anos, câncer de colo uterino, Papanicolau e vacina SUS para meninas e meninos de 9 a 14 anos)."
+      },
+      {
+        id: 18, mod: "mod3", modLabel: "3. Viroses", diff: "Fácil",
+        stem: "Qual doença viral, prevenida pela vacina Tríplice Viral, representa risco gravíssimo para mulheres grávidas por atravessar a barreira placentária e poder causar cegueira, surdez e retardo mental no feto?",
+        options: [
+          "Dengue.",
+          "Rubéola.",
+          "Herpes Bucal.",
+          "Hepatite A.",
+          "Gripe Aviária (H5N1)."
+        ],
+        correct: 1,
+        explain: "O vírus da Rubéola em gestantes atravessa a placenta e pode infectar o feto, causando cegueira, surdez e retardo mental! Por isso a importância da Tríplice Viral (sarampo, caxumba e rubéola), pré-natal e vacinação de mulheres em idade fértil não imunes."
+      },
+      {
+        id: 19, mod: "mod3", modLabel: "3. Viroses", diff: "Média",
+        stem: "Sobre o Sarampo, a Caxumba e a Catapora (Varicela), assinale a alternativa INCORRETA:",
+        options: [
+          "O Sarampo pode evoluir com complicações como pneumonia, otite média e encefalite, sendo prevenido pela Tríplice Viral.",
+          "A Caxumba provoca aumento das glândulas parótidas e raramente pode acometer sistema nervoso e testículos.",
+          "A Catapora (Varicela-zóster) causa pápulas, vesículas e crostas com coceira intensa em crianças e pode se manifestar como cobreiro em adultos, sendo prevenida pela Tetraviral.",
+          "Todas essas três doenças são transmitidas exclusivamente por mordida de cães ou morcegos.",
+          "Em geral, não há cura medicamentosa específica para essas três viroses, sendo a vacinação a principal profilaxia."
+        ],
+        correct: 3,
+        explain: "A alternativa D é INCORRETA! Sarampo, Caxumba e Catapora são transmitidas por vias aéreas (oral e respiratória), contato pessoa-pessoa e objetos contaminados. Quem é transmitida por saliva/mordida de mamíferos (cães, gatos, morcegos hematófagos) é a RAIVA!"
+      },
+      {
+        id: 20, mod: "mod3", modLabel: "3. Viroses", diff: "Média",
+        stem: "Um paciente com suspeita de Dengue pergunta se pode tomar aspirina para aliviar a febre alta e a dor muscular intensa. Qual a orientação CORRETA e por quê?",
+        options: [
+          "Sim, a aspirina é o tratamento curativo específico contra o vírus da dengue.",
+          "Não! A aspirina é contraindicada na dengue porque interfere na coagulação sanguínea, aumentando o risco de sangramentos (especialmente na forma hemorrágica).",
+          "Sim, pois a dengue é transmitida apenas pelo macho do Aedes aegypti e nunca afeta a coagulação.",
+          "Não, apenas porque a aspirina inibe a vacina Tríplice Viral.",
+          "Sim, desde que associada à vacina antirrábica."
+        ],
+        correct: 1,
+        explain: "Na dengue (transmitida pela fêmea do Aedes aegypti), o tratamento é apenas sintomático e a ASPIRINA é contraindicada por interferir na coagulação sanguínea, o que é perigoso diante do risco de dengue hemorrágica!"
+      },
+      {
+        id: 21, mod: "mod3", modLabel: "3. Viroses", diff: "Média",
+        stem: "Sobre a Poliomielite, a Raiva e a Gripe Aviária (H5N1), assinale a alternativa CORRETA:",
+        options: [
+          "Na Poliomielite (erradicada no Brasil desde 1989), o poliovírus pode destruir neurônios motores causando paralisia; o esquema vacinal usa VIP (2, 4 e 6 meses) e reforços com VOP (15 meses e 4 anos).",
+          "A Raiva tem cura simples com antibióticos após o início da hidrofobia.",
+          "A Gripe Aviária (H5N1) já é transmitida rotineiramente apenas por mosquitos.",
+          "No ambiente rural, o principal transmissor da Raiva é o mosquito Aedes aegypti.",
+          "A Poliomielite não possui nenhuma vacina disponível no Brasil."
+        ],
+        correct: 0,
+        explain: "Poliomielite (erradicada no Brasil desde 1989) destrói neurônios motores → paralisia; vacinas VIP (inativada injetável: 2, 4, 6 meses) e VOP (oral/gotinha: 15 meses e 4 anos). Raiva não tem cura (urbano: cães/gatos; rural: morcegos hematófagos). H5N1 = secreções de aves (perigo de mutação para transmissão humano-humano)."
+      },
+
+      // --- MÓDULO 4: MICOLOGIA E INFECÇÕES FÚNGICAS ---
+      {
+        id: 22, mod: "mod4", modLabel: "4. Micologia", diff: "Fácil",
+        stem: "Sobre as características gerais e estruturas vegetativas dos fungos, assinale a alternativa CORRETA:",
+        options: [
+          "Todos os fungos são unicelulares procariontes que fazem fotossíntese.",
+          "Com exceção das leveduras (unicelulares), os fungos são multicelulares; nos filamentosos, as estruturas em cordão chamam-se hifas (septadas ou cenocíticas) e o conjunto de hifas forma o micélio.",
+          "As pseudo-hifas são formadas exclusivamente por bactérias do gênero Mycobacterium.",
+          "Conídeo é o termo geral para qualquer esporo sexuado, enquanto esporo é exclusivamente assexuado.",
+          "Leveduras de brotamento dividem-se sempre em duas células exatamente iguais, enquanto leveduras de fissão formam brotos desiguais."
+        ],
+        correct: 1,
+        explain: "Fungos (Reino Fungi) nutrem-se por absorção; são multicelulares exceto leveduras. Filamentosos: hifas (septadas com septos ou cenocíticas sem septos) → micélio. Atenção às inversões: Conídeo = exclusivamente assexuado (mitose); Esporo = amplo (sexuado ou assexuado). Brotamento = divisão desigual; Fissão = duas células iguais!"
+      },
+      {
+        id: 23, mod: "mod4", modLabel: "4. Micologia", diff: "Média",
+        stem: "Um fungo patogênico cresce na forma filamentosa em temperatura ambiente (25 °C) e se transforma em levedura quando entra no corpo humano (37 °C). Esse fenômeno e um exemplo correto são, respectivamente:",
+        options: [
+          "Monomorfismo — Malassezia furfur.",
+          "Dimorfismo fúngico — Paracoccidioides brasiliensis, Histoplasma capsulatum ou Sporothrix brasiliensis.",
+          "Fissão binária — Epidermophyton spp.",
+          "Esporulação viral — Cryptococcus neoformans.",
+          "Cenocitismo — Mycobacterium leprae."
+        ],
+        correct: 1,
+        explain: "Dimorfismo fúngico dependente de temperatura (ou CO₂): 25 °C = filamentoso; 37 °C = levedura! Exemplos da aula: Coccidioides immitis, Paracoccidioides brasiliensis, Blastomyces dermatitidis, Histoplasma capsulatum e Sporothrix brasiliensis."
+      },
+      {
+        id: 24, mod: "mod4", modLabel: "4. Micologia", diff: "Média",
+        stem: "Sobre a parede celular e a membrana dos fungos, assinale a alternativa CORRETA:",
+        options: [
+          "A parede fúngica é idêntica à das bactérias, composta por ácidos micólicos e LPS.",
+          "A estrutura fúngica contém β-glucanos, quitina e ergosterol (semelhante ao colesterol humano e principal alvo da maioria dos antifúngicos); fungos com melanina na parede são chamados demáceos e os sem melanina são hialinos.",
+          "Os antifúngicos agem destruindo o colesterol das células humanas porque fungos não possuem esteróis.",
+          "Fungos hialinos possuem alta concentração de melanina na parede celular para resistir a raios UV.",
+          "A quitina é uma proteína exclusiva dos vírus envelopados."
+        ],
+        correct: 1,
+        explain: "Parede/membrana fúngica: β-glucanos, quitina, açúcares/manoproteínas e ERGOSTEROL (semelhante ao colesterol humano → principal alvo da maioria dos antifúngicos!). Com melanina (protege de UV e enzimas líticas) = DEMÁCEOS; sem melanina = HIALINOS."
+      },
+      {
+        id: 25, mod: "mod4", modLabel: "4. Micologia", diff: "Fácil",
+        stem: "Os fungos dermatófitos (como Epidermophyton, Microsporum e Trichophyton) causam micoses superficiais (como tínea pedis, onicomicose e tínea capitis) porque possuem a capacidade específica de:",
+        options: [
+          "Degradar a queratina da pele, unhas e pelos e utilizá-la como nutriente, invadindo o tecido na forma de hifas.",
+          "Infectar exclusivamente os linfócitos T CD4 na medula óssea.",
+          "Inalar esporos e invadir diretamente o cérebro sem passar pela pele.",
+          "Transformar-se em vírus de RNA no couro cabeludo.",
+          "Produzir fator corda na camada córnea."
+        ],
+        correct: 0,
+        explain: "Dermatófitos degradam queratina e a usam como nutriente na camada córnea da pele, unhas e pelos, tendo a hifa como forma invasiva. Lembrar também da Pitiríase versicolor (pano branco) causada por Malassezia furfur."
+      },
+      {
+        id: 26, mod: "mod4", modLabel: "4. Micologia", diff: "Média",
+        stem: "Um jardineiro sofre um pequeno traumatismo com espinho na mão e desenvolve lesão profunda na derme e tecido subcutâneo que se espalha por via linfática, diagnosticada como Esporotricose (Sporothrix schenckii). Essa infecção pertence a qual grupo de micoses?",
+        options: [
+          "Micoses superficiais / dermatofitoses.",
+          "Micoses de implantação (subcutâneas).",
+          "Micoses sistêmicas adquiridas exclusivamente por inalação.",
+          "Infecções por micobactérias.",
+          "Viroses exantemáticas."
+        ],
+        correct: 1,
+        explain: "Micoses de implantação resultam da inoculação de um fungo patogênico por TRAUMATISMO, atingindo derme, subcutâneo, músculo e fáscia (podendo espalhar por via linfática ou hematogênica). Exemplo clássico: Esporotricose (Sporothrix schenckii)!"
+      },
+      {
+        id: 27, mod: "mod4", modLabel: "4. Micologia", diff: "Média",
+        stem: "Como são adquiridas as micoses sistêmicas (como histoplasmose, paracoccidioidomicose, coccidioidomicose, blastomicose e criptococose) e qual é tipicamente a lesão primária?",
+        options: [
+          "Por ingestão de carne mal passada, com lesão primária gástrica.",
+          "Por inalação de propágulos fúngicos, com lesão primária pulmonar (frequentemente com tendência à regressão espontânea), podendo disseminar-se pelo sangue para órgãos extrapulmonares.",
+          "Por picada de mosquito, com lesão primária exclusivamente nas unhas.",
+          "Por contato com objetos de madeira, limitando-se sempre à haste livre dos pelos.",
+          "Apenas por transfusão sanguínea, sem comprometimento pulmonar."
+        ],
+        correct: 1,
+        explain: "Micoses sistêmicas são adquiridas por INALAÇÃO de propágulos fúngicos → lesão primária PULMONAR (com tendência à regressão espontânea em imunocompetentes), podendo disseminar-se via hematogênica para outros órgãos."
+      },
+      {
+        id: 28, mod: "mod4", modLabel: "4. Micologia", diff: "Média",
+        stem: "Sobre a Criptococose, assinale a alternativa que diferencia CORRETAMENTE suas duas principais espécies e seu quadro clínico clássico:",
+        options: [
+          "Cryptococcus neoformans associa-se a fezes de pombos urbanos/aves e Cryptococcus gattii associa-se a eucaliptos e matéria vegetal em decomposição; são leveduras encapsuladas que frequentemente acometem o SNC causando meningite criptocócica em imunocomprometidos.",
+          "Cryptococcus neoformans vive apenas em eucaliptos e nunca infecta pacientes imunocomprometidos.",
+          "Cryptococcus gattii é um fungo filamentoso que causa exclusivamente pé de atleta.",
+          "A criptococose nunca atinge o sistema nervoso central, restringindo-se à camada córnea da pele.",
+          "A criptococose é transmitida exclusivamente por mordida de morcegos hematófagos."
+        ],
+        correct: 0,
+        explain: "C. neoformans = levedura encapsulada no solo com fezes de pombos urbanos e outras aves; C. gattii = eucaliptos, árvores e matéria vegetal em decomposição. Após inalação e alojamento pulmonar, dissemina-se frequentemente ao SNC → meningite criptocócica (muito comum em imunocomprometidos!)."
+      }
+    ];
+
+    // =========================================================================
+    // STATE & STORAGE
+    // =========================================================================
+    const STORAGE_KEY = "microbiologia_2p_study_v1";
+    let state = {
+      doneMods: {},
+      answers: {},
+      turboAnswers: {},
+      dark: false
+    };
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (saved) state = { ...state, ...saved };
+    } catch (e) {}
+
+    function saveState() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    // =========================================================================
+    // DARK MODE
+    // =========================================================================
+    const toggleDarkBtn = document.getElementById("toggleDarkBtn");
+    function applyDark() {
+      document.body.classList.toggle("dark", !!state.dark);
+      toggleDarkBtn.textContent = state.dark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+    }
+    toggleDarkBtn.addEventListener("click", () => {
+      state.dark = !state.dark;
+      applyDark();
+      saveState();
+    });
+    applyDark();
+
+    // =========================================================================
+    // TABS & MODULE PROGRESS
+    // =========================================================================
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const panels = document.querySelectorAll(".panel");
+    const searchWrap = document.getElementById("searchWrap");
+    const searchInput = document.getElementById("searchInput");
+    const searchStatus = document.getElementById("searchStatus");
+
+    function goTab(tabId) {
+      tabBtns.forEach(b => b.classList.toggle("active", b.dataset.tab === tabId));
+      panels.forEach(p => p.classList.toggle("active", p.id === tabId));
+      const isSummary = tabId.startsWith("mod");
+      searchWrap.style.display = isSummary ? "flex" : "none";
+      clearHighlights();
+      searchInput.value = "";
+      searchStatus.textContent = "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    window.goTab = goTab;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => goTab(btn.dataset.tab));
+    });
+
+    function updateProgressUI() {
+      const modKeys = ["mod1", "mod2", "mod3", "mod4"];
+      let doneCount = 0;
+      modKeys.forEach(k => {
+        const isDone = !!state.doneMods[k];
+        if (isDone) doneCount++;
+        const tabBtn = document.querySelector(`.tab-btn[data-tab="${k}"]`);
+        if (tabBtn) tabBtn.classList.toggle("is-done", isDone);
+        const checkBtn = document.querySelector(`.check-done-btn[data-done="${k}"]`);
+        if (checkBtn) {
+          checkBtn.classList.toggle("checked", isDone);
+          checkBtn.textContent = isDone ? "✅ Módulo estudado" : "☐ Marcar módulo como estudado";
+        }
+      });
+      document.getElementById("progressText").textContent = `Progresso de estudo: ${doneCount} de 4 módulos concluídos`;
+      document.getElementById("progressFill").style.width = `${(doneCount / 4) * 100}%`;
+    }
+
+    document.querySelectorAll(".check-done-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const k = btn.dataset.done;
+        state.doneMods[k] = !state.doneMods[k];
+        saveState();
+        updateProgressUI();
+      });
+    });
+    updateProgressUI();
+
+    // =========================================================================
+    // SEARCH HIGHLIGHT INSIDE ACTIVE SUMMARY MODULE
+    // =========================================================================
+    function clearHighlights() {
+      document.querySelectorAll("mark.hl").forEach(m => {
+        const parent = m.parentNode;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+        parent.normalize();
+      });
+    }
+
+    searchInput.addEventListener("input", () => {
+      clearHighlights();
+      const term = searchInput.value.trim();
+      if (term.length < 2) {
+        searchStatus.textContent = "";
+        return;
+      }
+      const activePanel = document.querySelector(".panel.active");
+      if (!activePanel) return;
+      const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`(${escaped})`, "gi");
+      let matches = 0;
+
+      const walker = document.createTreeWalker(activePanel, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const tag = node.parentNode.tagName;
+          if (tag === "SVG" || tag === "TEXT" || tag === "SCRIPT" || tag === "STYLE" || tag === "BUTTON") {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      const nodes = [];
+      let n;
+      while ((n = walker.nextNode())) nodes.push(n);
+
+      nodes.forEach(textNode => {
+        if (regex.test(textNode.nodeValue)) {
+          regex.lastIndex = 0;
+          const frag = document.createDocumentFragment();
+          let lastIdx = 0;
+          let m;
+          while ((m = regex.exec(textNode.nodeValue)) !== null) {
+            if (m.index > lastIdx) {
+              frag.appendChild(document.createTextNode(textNode.nodeValue.slice(lastIdx, m.index)));
+            }
+            const mark = document.createElement("mark");
+            mark.className = "hl";
+            mark.textContent = m[0];
+            frag.appendChild(mark);
+            matches++;
+            lastIdx = regex.lastIndex;
+          }
+          if (lastIdx < textNode.nodeValue.length) {
+            frag.appendChild(document.createTextNode(textNode.nodeValue.slice(lastIdx)));
+          }
+          textNode.parentNode.replaceChild(frag, textNode);
+        }
+      });
+
+      searchStatus.textContent = matches > 0 ? `${matches} ocorrência(s) neste módulo` : "Nenhuma ocorrência neste módulo";
+      if (matches > 0) {
+        const first = activePanel.querySelector("mark.hl");
+        if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+
+    // =========================================================================
+    // REVISÃO TURBO (MÚLTIPLA ESCOLHA RÁPIDA)
+    // =========================================================================
+    const flashcardGrid = document.getElementById("flashcardGrid");
+    const turboScoreBadge = document.getElementById("turboScoreBadge");
+    const turboLetters = ["A", "B", "C", "D"];
+
+    function updateTurboStats() {
+      const tAns = state.turboAnswers || {};
+      let answered = 0, correct = 0;
+      FLASHCARDS.forEach((fc, i) => {
+        if (tAns[i] !== undefined) {
+          answered++;
+          if (tAns[i] === fc.correct) correct++;
+        }
+      });
+      if (turboScoreBadge) {
+        turboScoreBadge.textContent = `Acertos Turbo: ${correct}/${answered} (${answered}/${FLASHCARDS.length} respondidas)`;
+      }
+    }
+
+    function renderFlashcards() {
+      const tAns = state.turboAnswers || {};
+      flashcardGrid.innerHTML = FLASHCARDS.map((fc, i) => {
+        const chosen = tAns[i];
+        const isAnswered = chosen !== undefined;
+        const isRight = isAnswered && chosen === fc.correct;
+        const optsHtml = fc.options.map((opt, oi) => {
+          let cls = "turbo-opt-btn";
+          if (isAnswered) {
+            if (oi === fc.correct) cls += " correct";
+            else if (oi === chosen && chosen !== fc.correct) cls += " wrong";
+          }
+          return `
+            <button class="${cls}" data-ti="${i}" data-oi="${oi}" ${isAnswered ? "disabled" : ""} type="button">
+              <span class="turbo-letter">${turboLetters[oi]}</span>
+              <span>${opt}</span>
+            </button>
+          `;
+        }).join("");
+
+        return `
+          <div class="turbo-card">
+            <div>
+              <div class="flashcard-mod">${fc.mod} • Pegadinha ${i + 1}</div>
+              <div class="flashcard-q" style="margin-bottom:0;">${fc.q}</div>
+            </div>
+            <div class="turbo-opts">${optsHtml}</div>
+            <div class="turbo-explain ${isAnswered ? "show" : ""} ${isAnswered && !isRight ? "is-wrong" : ""}">
+              <strong style="color:${isRight ? "var(--sage)" : "var(--danger)"};">
+                ${isRight ? "✅ Acertou!" : `❌ Quase! Correta: letra ${turboLetters[fc.correct]}.`}
+              </strong>
+              <div style="margin-top:4px;">${fc.a}</div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      flashcardGrid.querySelectorAll(".turbo-opt-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const ti = Number(btn.dataset.ti);
+          const oi = Number(btn.dataset.oi);
+          if (!state.turboAnswers) state.turboAnswers = {};
+          if (state.turboAnswers[ti] !== undefined) return;
+          state.turboAnswers[ti] = oi;
+          saveState();
+          updateTurboStats();
+          renderFlashcards();
+        });
+      });
+      updateTurboStats();
+    }
+    renderFlashcards();
+
+    const resetTurboBtn = document.getElementById("resetTurboBtn");
+    if (resetTurboBtn) {
+      resetTurboBtn.addEventListener("click", () => {
+        state.turboAnswers = {};
+        saveState();
+        renderFlashcards();
+      });
+    }
+    // =========================================================================
+    // QUIZ ENGINE
+    // =========================================================================
+    let currentFilter = "all";
+    let retrySet = null;
+    let questionOrder = QUESTIONS.map(q => q.id);
+
+    const quizContainer = document.getElementById("quizContainer");
+    const letters = ["A", "B", "C", "D", "E"];
+
+    function updateQuizStats() {
+      const total = QUESTIONS.length;
+      let answered = 0, correct = 0, wrong = 0;
+      QUESTIONS.forEach(q => {
+        if (state.answers[q.id] !== undefined) {
+          answered++;
+          if (state.answers[q.id] === q.correct) correct++;
+          else wrong++;
+        }
+      });
+      const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+      document.getElementById("statAnswered").textContent = `${answered} / ${total}`;
+      document.getElementById("statCorrect").textContent = correct;
+      document.getElementById("statWrong").textContent = wrong;
+      document.getElementById("statPct").textContent = `${pct}%`;
+      document.getElementById("quizMiniScore").textContent = `Simulado: ${correct}/${answered} acertos (${answered}/${total})`;
+    }
+
+    function renderQuiz() {
+      const qMap = new Map(QUESTIONS.map(q => [q.id, q]));
+      let list = questionOrder.map(id => qMap.get(id));
+
+      if (retrySet) {
+        list = list.filter(q => retrySet.has(q.id));
+      } else if (currentFilter !== "all") {
+        list = list.filter(q => q.mod === currentFilter);
+      }
+
+      if (list.length === 0) {
+        quizContainer.innerHTML = `
+          <div class="card" style="text-align:center; padding:36px;">
+            <h3 style="justify-content:center;">🎉 Nenhuma questão pendente neste filtro!</h3>
+            <p style="color:var(--text-muted);">Você não tem questões erradas neste filtro no momento.</p>
+            <button class="action-btn primary" onclick="exitWrongMode()" type="button">Mostrar todas as questões</button>
+          </div>
+        `;
+        return;
+      }
+
+      const retryBanner = retrySet ? `
+        <div class="callout analogy" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div><strong>🎯 Modo Refazer Erradas:</strong> exibindo apenas as ${list.length} questão(ões) que você errou para tentar novamente.</div>
+          <button class="action-btn" onclick="exitWrongMode()" type="button">Voltar para todas</button>
+        </div>
+      ` : "";
+
+      quizContainer.innerHTML = retryBanner + list.map((q, idx) => {
+        const chosen = state.answers[q.id];
+        const isAnswered = chosen !== undefined;
+        const isRight = isAnswered && chosen === q.correct;
+
+        const optsHtml = q.options.map((opt, oi) => {
+          let cls = "opt-btn";
+          if (isAnswered) {
+            if (oi === q.correct) cls += " correct";
+            else if (oi === chosen && chosen !== q.correct) cls += " wrong";
+          }
+          return `
+            <button class="${cls}" data-qid="${q.id}" data-oi="${oi}" ${isAnswered ? "disabled" : ""} type="button">
+              <span class="opt-letter">${letters[oi]}</span>
+              <span>${opt}</span>
+            </button>
+          `;
+        }).join("");
+
+        return `
+          <article class="q-card" id="qcard-${q.id}">
+            <div class="q-meta">
+              <span class="q-badge">Questão ${idx + 1} • ${q.modLabel}</span>
+              <span class="q-diff">Nível: ${q.diff}</span>
+            </div>
+            <p class="q-stem">${q.stem}</p>
+            <div class="options-list">${optsHtml}</div>
+            <div class="q-explain ${isAnswered ? "show" : ""} ${isAnswered && !isRight ? "wrong-feedback" : ""}">
+              <strong class="${isRight ? "status-ok" : "status-err"}">
+                ${isRight ? "✅ Resposta correta!" : `❌ Quase! A correta é a letra ${letters[q.correct]}.`}
+              </strong>
+              <p style="margin:6px 0 0;">${q.explain}</p>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      quizContainer.querySelectorAll(".opt-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qid = Number(btn.dataset.qid);
+          const oi = Number(btn.dataset.oi);
+          if (state.answers[qid] !== undefined) return;
+          state.answers[qid] = oi;
+          saveState();
+          updateQuizStats();
+          renderQuiz();
+        });
+      });
+    }
+
+    window.exitWrongMode = () => {
+      retrySet = null;
+      renderQuiz();
+    };
+
+    document.querySelectorAll("#quizFilterPills .pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        document.querySelectorAll("#quizFilterPills .pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentFilter = pill.dataset.filter;
+        retrySet = null;
+        renderQuiz();
+      });
+    });
+
+    document.getElementById("btnOnlyWrong").addEventListener("click", () => {
+      const wrongIds = QUESTIONS.filter(q => state.answers[q.id] !== undefined && state.answers[q.id] !== q.correct).map(q => q.id);
+      if (wrongIds.length === 0) {
+        alert("Você ainda não errou nenhuma questão (ou já corrigiu todas)!");
+        return;
+      }
+      wrongIds.forEach(id => { delete state.answers[id]; });
+      saveState();
+      updateQuizStats();
+      retrySet = new Set(wrongIds);
+      renderQuiz();
+    });
+
+    document.getElementById("btnShuffle").addEventListener("click", () => {
+      for (let i = questionOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questionOrder[i], questionOrder[j]] = [questionOrder[j], questionOrder[i]];
+      }
+      renderQuiz();
+    });
+
+    document.getElementById("btnResetQuiz").addEventListener("click", () => {
+      if (!confirm("Deseja apagar todas as suas respostas do simulado e começar do zero?")) return;
+      state.answers = {};
+      retrySet = null;
+      questionOrder = QUESTIONS.map(q => q.id);
+      saveState();
+      updateQuizStats();
+      renderQuiz();
+    });
+
+    updateQuizStats();
+    renderQuiz();
+  </script>
+</body>
+</html>
+
